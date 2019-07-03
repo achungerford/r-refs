@@ -94,4 +94,3 @@ runner3 <- factor_speed_ordered[3]
 runner4 <- factor_speed_ordered[4]
 runner3 > runner4
 ```
-

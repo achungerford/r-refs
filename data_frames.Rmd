@@ -1,0 +1,10 @@
+---
+title: "Working with Data Frames"
+output: html_notebook
+---
+
+R has a built-in package called 'datasets'. You can view a list of datasets by calling `data()`.
+```{r included-data}
+data()
+```
+
