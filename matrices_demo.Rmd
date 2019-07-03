@@ -1,0 +1,184 @@
+---
+title: "Matrices"
+output: html_notebook
+---
+
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.
+
+* The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. 
+
+* The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`
+
+* The third argument `nrow` indicates that the matrix should have three rows.
+
+#### Simple matrix
+```{r create matrix}
+# create a simple 3x3 matrix filled with numbers 1-9
+simple_matrix <- matrix(1:9, byrow = TRUE, nrow = 3)
+```
+
+#### Create a matrix from vectors
+```{r example}
+# film revenue, Star Wars (in millions!) for 3x2 matrix (US, non-US)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# create box_office matrix from vectors
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi),
+                           nrow = 3,
+                           byrow = TRUE)
+# unnamed matrix
+star_wars_matrix
+```
+
+#### Name rows and columns of a matrix
+```{r name rows & cols}
+# create vectors used for naming rows, columns
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+region <- c("US", "non-US")
+
+# add row names, column names to matrix from vectors
+rownames(star_wars_matrix) <- titles
+colnames(star_wars_matrix) <- region
+
+# show matrix complete with named rows, columns
+star_wars_matrix
+```
+
+#### Add values across rows `sumRows()`
+```{r sum values across rows}
+# calculate worldwide revenue by summing totals acros rows
+worldwide <- rowSums(star_wars_matrix)
+
+# show worldwide revenue for each film
+worldwide
+```
+
+#### Add new columns to matrix with `cbind()`
+```{r add new columns}
+# make the 'worldwide' vector created from rowSums() to be a new column
+# and update the matrix
+star_wars_matrix <- cbind(star_wars_matrix, worldwide)
+
+# show new matrix
+star_wars_matrix
+```
+
+#### Recreate matrix1. Create new matrix2
+```{r matrix2 name rows & cols}
+##### star_wars_matrix
+
+# film revenue, Star Wars (in millions!) for 3x2 matrix (US, non-US)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# create box_office matrix from vectors
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi),
+                           nrow = 3,
+                           byrow = TRUE)
+
+# create vectors used for naming rows, columns
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+region <- c("US", "non-US")
+
+# add row names, column names to matrix from vectors
+rownames(star_wars_matrix) <- titles
+colnames(star_wars_matrix) <- region
+
+# show matrix complete with named rows, columns
+star_wars_matrix
+
+
+##### star_wars_matrix2
+
+# film revenue, Star Wars (in millions!) for 3x2 matrix (US, non-US)
+the_phantom_menace <- c(474.5, 552.5)
+attack_of_the_clones <- c(310.7, 338.7)
+revenge_of_the_sith <- c(380.3, 468.5)
+
+# create star_wars_matrix2, without names
+star_wars_matrix2 <- matrix(c(the_phantom_menace,
+                              attack_of_the_clones,
+                              revenge_of_the_sith),
+                            byrow = TRUE,
+                            nrow = 3)
+
+# create row and column name vectors
+titles2 <- c("The Phantom Menace",
+             "Attack of the Clones",
+             "Revenge of the Sith")
+region <- c("US", "non-US")
+
+# add row names, col names to matrix2
+rownames(star_wars_matrix2) <- titles2
+colnames(star_wars_matrix2) <- region
+
+# show completed, named matrix
+star_wars_matrix2
+```
+
+#### Add new rows to matrix with `rbind()`,
+We are essentially stacking matrices on top of one another.
+```{r add new rows}
+# bind the new rows, store as new matrix
+all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+all_wars_matrix
+```
+
+#### Sum column totals
+```{r sum values down columns}
+# sum the values in columns
+total_revenue <- colSums(all_wars_matrix)
+
+# show the new vector
+total_revenue
+```
+
+#### Select elements from a matrix
+Similar to vectors, you can use the square brackets `[]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate the rows you want to select from the columns.
+
+* `my_matrix[1, 2]` selects the element at the first row and second column
+
+* `my_matrix[1:3, 2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+
+
+If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively.
+
+* `my_matrix[,1]` selects all elements of the first column.
+
+* `my_matrix[1,]` selects all elements of the first row.
+
+```{r select rows or cols}
+# show all_wars_matrix
+all_wars_matrix
+
+# select the non-US revenue for all movies
+non_us_all <- all_wars_matrix[, 2]
+non_us_all
+
+# calculate the average non-US revenue
+mean(non_us_all)
+
+# select the non-US revenue for first two movies
+non_us_some <- non_us_all[1:2]
+non_us_some
+
+# calculate the average non-US revenue for first two movies
+mean(non_us_some)
+```
+
+#### Arithmetic with matrices
+Similar to what you have learned with vectors, the standard operators like `+, -, /, *,` etc. work in an element-wise way on matrices in R.
+
+For example, `2 * my_matrix` multiplies each element of my_matrix by two.
+
+As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+```{r math on matrices}
+# display the simple_matrix from earlier example
+simple_matrix
+
+# multiply every element in a matrix by a number
+simple_matrix * 10
+```
