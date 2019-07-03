@@ -22,3 +22,9 @@ factor_sex_vector <- factor(sex_vector)
 # show the factor vector
 factor_sex_vector
 ```
+
+#### Types of categorical variables: nominal, ordinal.
+
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say 'one is worth more than the other'. Think "nominal = name". Consider animals, `elephant`, `giraffe`, `hippo`.
+
+In contrast, ordinal variables do have a natural ordering. Consider rankings `good`, `better`, `best`. We know the order of these categories. Still, we don't know *how much* better one category is than the other.
