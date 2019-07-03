@@ -35,6 +35,7 @@ When you first get a data set, you will often notice that it contains factors wi
 
 * `levels(factor_vector) <- c("name1", "name2",...)`
 
+**Nominal vector**
 ```{r make levels}
 # record survey data in vector
 survey <- c("M", "F", "F", "M", "M")
@@ -57,6 +58,40 @@ levels(factor_survey) <- c('Female', 'Male')
 
 # show the factor vector with renamed levels
 factor_survey
+```
 
+`summary()` on a factor vector will give you a quick count of factors and quantity in each.
+```{r summarizing-a-factor}
+summary(factor_survey)
+```
+
+Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R.
+
+**Ordinal vector**
+```{r}
+# create a vector that with ordered values
+speed_vector <- c('medium', 'slow', 'slow', 'medium', 'fast')
+
+# convert speed vector to ordered factor vector
+factor_speed_ordered <- factor(speed_vector,
+                               ordered = TRUE,
+                               levels = c('slow', 'medium', 'fast'))
+
+# show the vector and summarize the vector
+factor_speed_ordered
+summary(factor_speed_ordered)
+```
+
+With an ordinal vector, you can use comparison operators to analyze different elements.
+
+### Compare elements of an ordinal vector
+```{r compare-ordinal-elements}
+# show the ordinal vector
+factor_speed_ordered
+
+# compare elements in an ordinal vector
+runner3 <- factor_speed_ordered[3]
+runner4 <- factor_speed_ordered[4]
+runner3 > runner4
 ```
 
