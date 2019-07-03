@@ -16,7 +16,7 @@ str(mtcars)
 
 Notice that every variable is type `numeric` in this data set.
 
-### Display portions of data
+## Display portions of data
 ```{r show-data}
 # show the first 6 rows
 head(mtcars)
@@ -51,11 +51,54 @@ planets_df
 ```
 
 ## Select elements of a data frame
-`df_name[row, col]`
+### `df_name[row, col]`
 ```{r select-elements}
 # Print out diameter of Mercury (row 1, column 3)
 planets_df[1, 3]
+```
 
+```{r}
 # Print out data for Mars (entire fourth row)
 planets_df[4, ]
 ```
+
+## Select by row/col number
+### `planets_df[1:3, 2]`.
+Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. Suppose you want to select the first three elements of the `type` column. A possible disadvantage of this approach is that you have to know (or look up) the column number of type, which gets hard if you have a lot of variables.
+
+## Select by row/col name
+###  `planets_df[1:3, "type"]`
+It is often easier to just make use of the variable name.
+
+```{r}
+head(planets_df)
+```
+
+```{r}
+# Select & print out the first 5 values in the "diameter" column of planets_df
+planets_df[1:5, 3]
+```
+
+## Select entire column
+You will often want to select an entire column, namely one specific variable from a data frame.
+```{r select-column}
+# select column by number
+planets_df[,3]
+
+# select column by name
+planets_df[,"diameter"]
+
+# shortcut using '$'
+diameter_vector <- planets_df$diameter
+```
+
+## Use columns to get values from other columns
+Say you wan to get the names of the planets with rings. You're going to use the rings column to get only the planets where rings = TRUE.
+```{r}
+# isolate the rings column into a vector
+rings_vector <- planets_df$rings
+
+# if planet has rings, get the name of the planet
+planets_df[rings_vector, 1:5]
+```
+

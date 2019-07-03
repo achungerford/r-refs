@@ -1796,8 +1796,9 @@ str(mtcars)
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Notice that every variable is type <code>numeric</code> in this data set.</p>
-<div id="display-portions-of-data" class="section level3">
-<h3>Display portions of data</h3>
+</div>
+<div id="display-portions-of-data" class="section level2">
+<h2>Display portions of data</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzaG93IHRoZSBmaXJzdCA2IHJvd3NcbmhlYWQobXRjYXJzKVxuYGBgIn0= -->
@@ -1825,7 +1826,6 @@ tail(mtcars)</code></pre>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
 </div>
 <div id="build-your-own-data-set" class="section level2">
 <h2>Build your own data set</h2>
@@ -1869,7 +1869,8 @@ planets_df</code></pre>
 </div>
 <div id="select-elements-of-a-data-frame" class="section level2">
 <h2>Select elements of a data frame</h2>
-<p><code>df_name[row, col]</code></p>
+<div id="df_namerow-col" class="section level3">
+<h3><code>df_name[row, col]</code></h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQcmludCBvdXQgZGlhbWV0ZXIgb2YgTWVyY3VyeSAocm93IDEsIGNvbHVtbiAzKVxucGxhbmV0c19kZlsxLCAzXVxuYGBgIn0= -->
@@ -1879,11 +1880,15 @@ planets_df[1, 3]</code></pre>
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMzgyXG4ifQ== -->
 <pre><code>[1] 0.382</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQcmludCBvdXQgZGF0YSBmb3IgTWFycyAoZW50aXJlIGZvdXJ0aCByb3cpXG5wbGFuZXRzX2RmWzQsIF1cbmBgYCJ9 -->
 <pre class="r"><code># Print out data for Mars (entire fourth row)
 planets_df[4, ]</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJuMVNTMDdETUJCMVB1NG5FZ1VCSzFaZHNDVklYSUFOcUJKU1dmQlR0eVoxU3lUWGljWU9VTGdNSitCR0xIb0RUdEF5YVR3bGpRUUwyKy9OeHpQejdKdUwwVmswaWhoalBndTR4L3dBWWVqajVyR1FkY3Z6bGJIZ0FBSEhjMmZ0UU5BSWFpbjVMSlZCdEllcjQ2ejhVb0I5Y3FSOVZlU3BsZUJvT0JSZ3lEV1VrQlF3SjNvdGMxdG9TWGZmQ2x1QUpuWVBRaGVVeVI5a1NiYWI0WWtTaG5yWmREZ1JpYzBBMGJJMmgxK2wraXNYN2J2bzdrQ1kvalFWMmpyRC9wMEVrTVpDS2xRL1YwSkxXNlVHcS84S3NWN3BPViswanI5T2p6NDIvUHR0TWZnOGZFY2N1VWFhcW5NdFpwSm00S1JaYVNSczV6bmh6amhGeDYrMkhjaXNzR2xHbW5GSTliU3BVaGV5bDVpcWtCN2hIME5GWTJGRlBJR3kvbnF3cmF2YVdWNVd3NHQ4OTFHMmtqMW9HSGFOVkRLeEo3alBwTGFtcG9OWGE2YU9lVlV5cE1aSWtwYlUwM1R6VmJnU2oxSTUwc01CMS9QRk9jNVBEeG1oMWNRV0JhSzRLTWtVV2FwSFcvNEE0STh5TlJZREFBQT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJuMVNTMDdETUJCMVB1NG5FZ1VCSzFaZHNHMFFYSUFOcUJKU1dmQlR0MFBxdGhIR2lTWU9VSG9aVHNDTldQUUduS0RGYVR3bGpRU0x4Ry8rODU1OWN6RThDNFlCWTh4bEhuZVk2eG5vdStibk1KKzFpL09OTWUvQUFHN09uWFhBZ0ZwU1E0b1hJVE9EOXN6WHNsNStDYWluMW1oZTVXbXNCVnJUSHdCbUZCb0lqSEtja1hrdFVwMHJRYjF2UWVlb3lMcEhVRGxWOGdkUkdOdkw4RWhDUnJ0c05oeERwQk0wYUZuaDRaYWw3c3BtdXphNzNZZXNPNGxCYWV2WXZ4T0lJdE1ZZyt5bUVwVFFaYW0zK204UTZ4U1I4MFhqK092azZHTmpmNzh2K3ArSGM0TUR1MGhkZGE3Z1dSQUhUcG9WVHNKNmxoSnVqV0lUK05XMmhZa0dIU2VrR2NkWVRlb3F0VEY1RFdrSzZlSC9RU29ZZ1lad2pNWDhOYkd0VnMwa0xhYVpScTU5S0Z2RkR0WWN1N2txQm85NjBUUlhUNzNUaWc1T1paa3E1dVZJbnhZalNScENUZUxOVStFU0hvVzBSc2NRWFBNTFU4T2ZMakl3M2l6VVJpREtDNkpFa3FlOHRPVVBaRExnb2hZREFBQT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["type"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
@@ -1891,9 +1896,97 @@ planets_df[4, ]</code></pre>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="select-by-rowcol-number" class="section level2">
+<h2>Select by row/col number</h2>
+<div id="planets_df13-2." class="section level3">
+<h3><code>planets_df[1:3, 2]</code>.</h3>
+<p>Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. Suppose you want to select the first three elements of the <code>type</code> column. A possible disadvantage of this approach is that you have to know (or look up) the column number of type, which gets hard if you have a lot of variables.</p>
+</div>
+</div>
+<div id="select-by-rowcol-name" class="section level2">
+<h2>Select by row/col name</h2>
+<div id="planets_df13-type" class="section level3">
+<h3><code>planets_df[1:3, &quot;type&quot;]</code></h3>
+<p>It is often easier to just make use of the variable name.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChwbGFuZXRzX2RmKVxuYGBgIn0= -->
+<pre class="r"><code>head(planets_df)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6Nn0sInJkZiI6Ikg0c0lBQUFBQUFBQUJuMVN2MnNVUVJTZW5idlozQzBhSlVsbElZZUlYVTRVTE1OZUVRa0tKNWdZU1JVeTdrMHVTOWJaOWUxc1lxS0ZqWDlBYWh0QnNCUkxzYkt3dGsyaVdBU3hDa282dThRM3UvTXV1UU5kbUozM3Z2Zjdlek0vdTNReldBb1lZNXpWaE1kNERjVTZ4NS9INnF4cDc2ZU0xU1pSRUhpZng5dTNIbmdhcFJPQ1pYQ0pEd1g2aWRwUVNZN1N4ZEs3UXNWdENXYk5LV04zaXl3MkNweGE3MHJJeWRSVkVCV3dSZW85bFpsQ0s4cTlJRTBCbXJSRmtMcWdTUEZRV1dXNEdSRWxNcWRlQmgydXlzaWtnTkx4bWRuNHlQR3FZOVB4RTVlQnV3ek5PWm0zK3JIVXhnRVREeFNBeWczRU1tbGxpZFRLVktHMWsvOFZaK01XQ2ZmZ2ZldnpxN2ZoNytWYjRmTmZPK0VSSzcvd3dMLzYvZnFsMTUxcjYvemNuWS9MblNzL2Z5ejgrYkpQY1ozdS9jT1hsei9NZjlJcmIzYURtU2VEdUtQdGc3bDNVOC9DcnpPWk5ZVGYwQXRkMFJTNFlVZS9NOE9lY3FmbFkwWGNDZHFWQlVrMld4bkpqVjZNaHRPZE5pQTEwc1FwN1VwQXJQdWoyMmxDdXRtbUtuWVAvRVhWanY4UDhvS2VOTEs5Q3JhSGtzQ2hkR05wWml0aU11NGU3bEN3QnlQQWhVTGI0cjNwYUszUTY5TTNIRCtPaTdJaHovRkZzcWhLMXFreG9zVlh1aDhQbnFsSTVDT1ZPR1VjaHl4bmJHZklBVDJZQU5HOGJaQWs4Z3VpTkNHa2Voekhmd0ZObFloaXBnTUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["type"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Mercury","2":"Terrestrial planet","3":"0.382","4":"58.64","5":"FALSE","_rn_":"1"},{"1":"Venus","2":"Terrestrial planet","3":"0.949","4":"-243.02","5":"FALSE","_rn_":"2"},{"1":"Earth","2":"Terrestrial planet","3":"1.000","4":"1.00","5":"FALSE","_rn_":"3"},{"1":"Mars","2":"Terrestrial planet","3":"0.532","4":"1.03","5":"FALSE","_rn_":"4"},{"1":"Jupiter","2":"Gas giant","3":"11.209","4":"0.41","5":"TRUE","_rn_":"5"},{"1":"Saturn","2":"Gas giant","3":"9.449","4":"0.43","5":"TRUE","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTZWxlY3QgJiBwcmludCBvdXQgdGhlIGZpcnN0IDUgdmFsdWVzIGluIHRoZSBcImRpYW1ldGVyXCIgY29sdW1uIG9mIHBsYW5ldHNfZGZcbnBsYW5ldHNfZGZbMTo1LCAzXVxuYGBgIn0= -->
+<pre class="r"><code># Select &amp; print out the first 5 values in the &quot;diameter&quot; column of planets_df
+planets_df[1:5, 3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAwLjM4MiAgMC45NDkgIDEuMDAwICAwLjUzMiAxMS4yMDlcbiJ9 -->
+<pre><code>[1]  0.382  0.949  1.000  0.532 11.209</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="select-entire-column" class="section level2">
+<h2>Select entire column</h2>
+<p>You will often want to select an entire column, namely one specific variable from a data frame.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzZWxlY3QgY29sdW1uIGJ5IG51bWJlclxucGxhbmV0c19kZlssM11cbmBgYCJ9 -->
+<pre class="r"><code># select column by number
+planets_df[,3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAwLjM4MiAgMC45NDkgIDEuMDAwICAwLjUzMiAxMS4yMDkgIDkuNDQ5ICA0LjAwNyAgMy44ODNcbiJ9 -->
+<pre><code>[1]  0.382  0.949  1.000  0.532 11.209  9.449  4.007  3.883</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzZWxlY3QgY29sdW1uIGJ5IG5hbWVcbnBsYW5ldHNfZGZbLFwiZGlhbWV0ZXJcIl1cbmBgYCJ9 -->
+<pre class="r"><code># select column by name
+planets_df[,&quot;diameter&quot;]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAwLjM4MiAgMC45NDkgIDEuMDAwICAwLjUzMiAxMS4yMDkgIDkuNDQ5ICA0LjAwNyAgMy44ODNcbiJ9 -->
+<pre><code>[1]  0.382  0.949  1.000  0.532 11.209  9.449  4.007  3.883</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzaG9ydGN1dCB1c2luZyAnJCdcbmRpYW1ldGVyX3ZlY3RvciA8LSBwbGFuZXRzX2RmJGRpYW1ldGVyXG5gYGAifQ== -->
+<pre class="r"><code># shortcut using &#39;$&#39;
+diameter_vector &lt;- planets_df$diameter</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="use-columns-to-get-values-from-other-columns" class="section level2">
+<h2>Use columns to get values from other columns</h2>
+<p>Say you wan to get the names of the planets with rings. You’re going to use the rings column to get only the planets where rings = TRUE.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmluZ3NfdmVjdG9yIDwtIHBsYW5ldHNfZGYkcmluZ3NcblxucGxhbmV0c19kZltyaW5nc192ZWN0b3IsIDE6NV1cbmBgYCJ9 -->
+<pre class="r"><code>rings_vector &lt;- planets_df$rings
+
+planets_df[rings_vector, 1:5]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUJuMVN1MDdETUJSMUh1NGpvZy9CamlvR0Z0UktzRmZ0QUVJZ0ZZbW5PaUc1cVNrUndRbU9BL1FEK0JJMnZnQ3g4QWNNTEFnWVVjWEF4TVRXWXFlKzBGU0N3Zkc1eC9kNWNuZFcyeXRPMjBFSW1jakNCakl0Q1cxVGZneGtvN3k2THhHeTVpVEE4aTZvMThRWm9ZdzgyVEdmQ3NqNDlKejZrVVJsZVhLYXhXdUVpMk50WkRmajBCT1VhOU51RVI3QlU0dHlOK1o5TUxkb0tHSkdJZmN1RVRGbllPMXp3bUtJeEFkVUdlbG1zT3VUQ0hyNTZmQ0l1Q0xnRWcwblpqTFNSNlV4UnpyUzFKSDVkUkpWZWg1aFFoT3plNVJ6R2dudUViOFMrb1JSTVE2MVJ2OFZSVVZWdExsNFlzNXMzQjAyRndadnUxOFB6ODF5ZGtrUnpWSzUwM3I4dkFHL3hrczl2SDV5Nm8zWHEvbmI3WStyKzNjbklScURoRDZUUHM3ZlEveHF3Y2dwQlMwd2FLOUl3S0lmQXM1MVBmbncrNDl5UEJCRWVBRm9qN25IZXROcTUzbHdVWU1xb0N1ZTJKWGNIK0k0WFNKSTdZaXJYaEtCVW1telFhZ3F5NlNtWHNSVXNNR25pRkxNVkJQZHFuc2NzNVBxc3RZSGRDbm8yNTdBZW9sdGFBemt5VkRXODM3V0QvdWtRMzF0Rk9Xd3lheTFVR29CQytGSU5xb0pLUmI0T1c3Z0F6UCsrY052a3hLQkNIWURBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["type"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["diameter"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["rotation"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["rings"],"name":[5],"type":["lgl"],"align":["right"]}],"data":[{"1":"Jupiter","2":"Gas giant","3":"11.209","4":"0.41","5":"TRUE","_rn_":"5"},{"1":"Saturn","2":"Gas giant","3":"9.449","4":"0.43","5":"TRUE","_rn_":"6"},{"1":"Uranus","2":"Gas giant","3":"4.007","4":"-0.72","5":"TRUE","_rn_":"7"},{"1":"Neptune","2":"Gas giant","3":"3.883","4":"0.67","5":"TRUE","_rn_":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIldvcmtpbmcgd2l0aCBEYXRhIEZyYW1lcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFdoYXQgYXJlIGRhdGEgZnJhbWVzPyBIb3cgYXJlIHRoZXkgZGlmZmVyZW50IGZyb20gbWF0cmljZXM/DQoqKk1hdHJpeCoqIC0gYWxsIHRoZSBlbGVtZW50cyBpbiBhIG1hdHJpeCBzaG91bGQgYmUgb2YgdGhlIHNhbWUgdHlwZS4NCg0KKipEYXRhIGZyYW1lKiogLSBjYW4gaGF2ZSBlbGVtZW50cyB0aGF0IGFyZSBvZiBkaWZmZXJlbnQgdHlwZXMuIGNvbHVtbnMgPSB2YXJpYWJsZXMuIHJvd3MgPSBvYnNlcnZhdGlvbnMuDQoNClIgaGFzIGEgYnVpbHQtaW4gcGFja2FnZSBjYWxsZWQgJ2RhdGFzZXRzJy4gWW91IGNhbiB2aWV3IGEgbGlzdCBvZiBkYXRhc2V0cyBpbiBhIG5ldyB0YWIgaW4gUnN0dWRpbyBieSBjYWxsaW5nIGBkYXRhKClgIGZ1bmN0aW9uLg0KYGBge3IgaW5jbHVkZWQtZGF0YX0NCiMgbG9vayBhdCB0aGUgc3RydWN0dXJlIG9mIHRoZSAnbXRjYXJzJyBkYXRhIHNldA0Kc3RyKG10Y2FycykNCmBgYA0KDQpOb3RpY2UgdGhhdCBldmVyeSB2YXJpYWJsZSBpcyB0eXBlIGBudW1lcmljYCBpbiB0aGlzIGRhdGEgc2V0Lg0KDQojIyMgRGlzcGxheSBwb3J0aW9ucyBvZiBkYXRhDQpgYGB7ciBzaG93LWRhdGF9DQojIHNob3cgdGhlIGZpcnN0IDYgcm93cw0KaGVhZChtdGNhcnMpDQoNCiMgc2hvdyB0aGUgbGFzdCA2IHJvd3MNCnRhaWwobXRjYXJzKQ0KYGBgDQoNCiMjIEJ1aWxkIHlvdXIgb3duIGRhdGEgc2V0DQpgYGB7ciBidWlsZC1kYXRhfQ0KIyBkZWZpbmUgeW91ciB2ZWN0b3JzDQpuYW1lIDwtIGMoIk1lcmN1cnkiLCAiVmVudXMiLCAiRWFydGgiLA0KICAgICAgICAgICJNYXJzIiwgIkp1cGl0ZXIiLCAiU2F0dXJuIiwNCiAgICAgICAgICAiVXJhbnVzIiwgIk5lcHR1bmUiKQ0KDQp0eXBlIDwtIGMoIlRlcnJlc3RyaWFsIHBsYW5ldCIsDQogICAgICAgICAgIlRlcnJlc3RyaWFsIHBsYW5ldCIsDQogICAgICAgICAgIlRlcnJlc3RyaWFsIHBsYW5ldCIsDQogICAgICAgICAgIlRlcnJlc3RyaWFsIHBsYW5ldCIsDQogICAgICAgICAgIkdhcyBnaWFudCIsDQogICAgICAgICAgIkdhcyBnaWFudCIsDQogICAgICAgICAgIkdhcyBnaWFudCIsDQogICAgICAgICAgIkdhcyBnaWFudCIpDQoNCmRpYW1ldGVyIDwtIGMoMC4zODIsIDAuOTQ5LCAxLCAwLjUzMiwgMTEuMjA5LCA5LjQ0OSwgNC4wMDcsIDMuODgzKQ0Kcm90YXRpb24gPC0gYyg1OC42NCwgLTI0My4wMiwgMSwgMS4wMywgMC40MSwgMC40MywgLTAuNzIsIDAuNjcpDQpyaW5ncyA8LSBjKEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBUUlVFLCBUUlVFLCBUUlVFLCBUUlVFKQ0KDQojIGNyZWF0ZSBhIEJhc2UgUiBkYXRhIGZyYW1lIChkaWZmZXJlbnQgZnJvbSB0aWR5dmVyc2UpDQpwbGFuZXRzX2RmIDwtIGRhdGEuZnJhbWUobmFtZSwgdHlwZSwgZGlhbWV0ZXIsIHJvdGF0aW9uLCByaW5ncykNCnBsYW5ldHNfZGYNCmBgYA0KDQojIyBTZWxlY3QgZWxlbWVudHMgb2YgYSBkYXRhIGZyYW1lDQpgZGZfbmFtZVtyb3csIGNvbF1gDQpgYGB7ciBzZWxlY3QtZWxlbWVudHN9DQojIFByaW50IG91dCBkaWFtZXRlciBvZiBNZXJjdXJ5IChyb3cgMSwgY29sdW1uIDMpDQpwbGFuZXRzX2RmWzEsIDNdDQoNCiMgUHJpbnQgb3V0IGRhdGEgZm9yIE1hcnMgKGVudGlyZSBmb3VydGggcm93KQ0KcGxhbmV0c19kZls0LCBdDQpgYGANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIldvcmtpbmcgd2l0aCBEYXRhIEZyYW1lcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFdoYXQgYXJlIGRhdGEgZnJhbWVzPyBIb3cgYXJlIHRoZXkgZGlmZmVyZW50IGZyb20gbWF0cmljZXM/DQoqKk1hdHJpeCoqIC0gYWxsIHRoZSBlbGVtZW50cyBpbiBhIG1hdHJpeCBzaG91bGQgYmUgb2YgdGhlIHNhbWUgdHlwZS4NCg0KKipEYXRhIGZyYW1lKiogLSBjYW4gaGF2ZSBlbGVtZW50cyB0aGF0IGFyZSBvZiBkaWZmZXJlbnQgdHlwZXMuIGNvbHVtbnMgPSB2YXJpYWJsZXMuIHJvd3MgPSBvYnNlcnZhdGlvbnMuDQoNClIgaGFzIGEgYnVpbHQtaW4gcGFja2FnZSBjYWxsZWQgJ2RhdGFzZXRzJy4gWW91IGNhbiB2aWV3IGEgbGlzdCBvZiBkYXRhc2V0cyBpbiBhIG5ldyB0YWIgaW4gUnN0dWRpbyBieSBjYWxsaW5nIGBkYXRhKClgIGZ1bmN0aW9uLg0KYGBge3IgaW5jbHVkZWQtZGF0YX0NCiMgbG9vayBhdCB0aGUgc3RydWN0dXJlIG9mIHRoZSAnbXRjYXJzJyBkYXRhIHNldA0Kc3RyKG10Y2FycykNCmBgYA0KDQpOb3RpY2UgdGhhdCBldmVyeSB2YXJpYWJsZSBpcyB0eXBlIGBudW1lcmljYCBpbiB0aGlzIGRhdGEgc2V0Lg0KDQojIyBEaXNwbGF5IHBvcnRpb25zIG9mIGRhdGENCmBgYHtyIHNob3ctZGF0YX0NCiMgc2hvdyB0aGUgZmlyc3QgNiByb3dzDQpoZWFkKG10Y2FycykNCg0KIyBzaG93IHRoZSBsYXN0IDYgcm93cw0KdGFpbChtdGNhcnMpDQpgYGANCg0KIyMgQnVpbGQgeW91ciBvd24gZGF0YSBzZXQNCmBgYHtyIGJ1aWxkLWRhdGF9DQojIGRlZmluZSB5b3VyIHZlY3RvcnMNCm5hbWUgPC0gYygiTWVyY3VyeSIsICJWZW51cyIsICJFYXJ0aCIsDQogICAgICAgICAgIk1hcnMiLCAiSnVwaXRlciIsICJTYXR1cm4iLA0KICAgICAgICAgICJVcmFudXMiLCAiTmVwdHVuZSIpDQoNCnR5cGUgPC0gYygiVGVycmVzdHJpYWwgcGxhbmV0IiwNCiAgICAgICAgICAiVGVycmVzdHJpYWwgcGxhbmV0IiwNCiAgICAgICAgICAiVGVycmVzdHJpYWwgcGxhbmV0IiwNCiAgICAgICAgICAiVGVycmVzdHJpYWwgcGxhbmV0IiwNCiAgICAgICAgICAiR2FzIGdpYW50IiwNCiAgICAgICAgICAiR2FzIGdpYW50IiwNCiAgICAgICAgICAiR2FzIGdpYW50IiwNCiAgICAgICAgICAiR2FzIGdpYW50IikNCg0KZGlhbWV0ZXIgPC0gYygwLjM4MiwgMC45NDksIDEsIDAuNTMyLCAxMS4yMDksIDkuNDQ5LCA0LjAwNywgMy44ODMpDQpyb3RhdGlvbiA8LSBjKDU4LjY0LCAtMjQzLjAyLCAxLCAxLjAzLCAwLjQxLCAwLjQzLCAtMC43MiwgMC42NykNCnJpbmdzIDwtIGMoRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIFRSVUUsIFRSVUUsIFRSVUUsIFRSVUUpDQoNCiMgY3JlYXRlIGEgQmFzZSBSIGRhdGEgZnJhbWUgKGRpZmZlcmVudCBmcm9tIHRpZHl2ZXJzZSkNCnBsYW5ldHNfZGYgPC0gZGF0YS5mcmFtZShuYW1lLCB0eXBlLCBkaWFtZXRlciwgcm90YXRpb24sIHJpbmdzKQ0KcGxhbmV0c19kZg0KYGBgDQoNCiMjIFNlbGVjdCBlbGVtZW50cyBvZiBhIGRhdGEgZnJhbWUNCiMjIyBgZGZfbmFtZVtyb3csIGNvbF1gDQpgYGB7ciBzZWxlY3QtZWxlbWVudHN9DQojIFByaW50IG91dCBkaWFtZXRlciBvZiBNZXJjdXJ5IChyb3cgMSwgY29sdW1uIDMpDQpwbGFuZXRzX2RmWzEsIDNdDQpgYGANCg0KYGBge3J9DQojIFByaW50IG91dCBkYXRhIGZvciBNYXJzIChlbnRpcmUgZm91cnRoIHJvdykNCnBsYW5ldHNfZGZbNCwgXQ0KYGBgDQoNCiMjIFNlbGVjdCBieSByb3cvY29sIG51bWJlcg0KIyMjIGBwbGFuZXRzX2RmWzE6MywgMl1gLg0KSW5zdGVhZCBvZiB1c2luZyBudW1lcmljcyB0byBzZWxlY3QgZWxlbWVudHMgb2YgYSBkYXRhIGZyYW1lLCB5b3UgY2FuIGFsc28gdXNlIHRoZSB2YXJpYWJsZSBuYW1lcyB0byBzZWxlY3QgY29sdW1ucyBvZiBhIGRhdGEgZnJhbWUuIFN1cHBvc2UgeW91IHdhbnQgdG8gc2VsZWN0IHRoZSBmaXJzdCB0aHJlZSBlbGVtZW50cyBvZiB0aGUgYHR5cGVgIGNvbHVtbi4gQSBwb3NzaWJsZSBkaXNhZHZhbnRhZ2Ugb2YgdGhpcyBhcHByb2FjaCBpcyB0aGF0IHlvdSBoYXZlIHRvIGtub3cgKG9yIGxvb2sgdXApIHRoZSBjb2x1bW4gbnVtYmVyIG9mIHR5cGUsIHdoaWNoIGdldHMgaGFyZCBpZiB5b3UgaGF2ZSBhIGxvdCBvZiB2YXJpYWJsZXMuDQoNCiMjIFNlbGVjdCBieSByb3cvY29sIG5hbWUNCiMjIyAgYHBsYW5ldHNfZGZbMTozLCAidHlwZSJdYA0KSXQgaXMgb2Z0ZW4gZWFzaWVyIHRvIGp1c3QgbWFrZSB1c2Ugb2YgdGhlIHZhcmlhYmxlIG5hbWUuDQoNCmBgYHtyfQ0KaGVhZChwbGFuZXRzX2RmKQ0KYGBgDQoNCmBgYHtyfQ0KIyBTZWxlY3QgJiBwcmludCBvdXQgdGhlIGZpcnN0IDUgdmFsdWVzIGluIHRoZSAiZGlhbWV0ZXIiIGNvbHVtbiBvZiBwbGFuZXRzX2RmDQpwbGFuZXRzX2RmWzE6NSwgM10NCmBgYA0KDQojIyBTZWxlY3QgZW50aXJlIGNvbHVtbg0KWW91IHdpbGwgb2Z0ZW4gd2FudCB0byBzZWxlY3QgYW4gZW50aXJlIGNvbHVtbiwgbmFtZWx5IG9uZSBzcGVjaWZpYyB2YXJpYWJsZSBmcm9tIGEgZGF0YSBmcmFtZS4NCmBgYHtyIHNlbGVjdC1jb2x1bW59DQojIHNlbGVjdCBjb2x1bW4gYnkgbnVtYmVyDQpwbGFuZXRzX2RmWywzXQ0KDQojIHNlbGVjdCBjb2x1bW4gYnkgbmFtZQ0KcGxhbmV0c19kZlssImRpYW1ldGVyIl0NCg0KIyBzaG9ydGN1dCB1c2luZyAnJCcNCmRpYW1ldGVyX3ZlY3RvciA8LSBwbGFuZXRzX2RmJGRpYW1ldGVyDQpgYGANCg0KIyMgVXNlIGNvbHVtbnMgdG8gZ2V0IHZhbHVlcyBmcm9tIG90aGVyIGNvbHVtbnMNClNheSB5b3Ugd2FuIHRvIGdldCB0aGUgbmFtZXMgb2YgdGhlIHBsYW5ldHMgd2l0aCByaW5ncy4gWW91J3JlIGdvaW5nIHRvIHVzZSB0aGUgcmluZ3MgY29sdW1uIHRvIGdldCBvbmx5IHRoZSBwbGFuZXRzIHdoZXJlIHJpbmdzID0gVFJVRS4NCmBgYHtyfQ0KIyBpc29sYXRlIHRoZSByaW5ncyBjb2x1bW4gaW50byBhIHZlY3Rvcg0KcmluZ3NfdmVjdG9yIDwtIHBsYW5ldHNfZGYkcmluZ3MNCg0KIyBpZiBwbGFuZXQgaGFzIHJpbmdzLCBnZXQgdGhlIG5hbWUgb2YgdGhlIHBsYW5ldA0KcGxhbmV0c19kZltyaW5nc192ZWN0b3IsIDE6NV0NCmBgYA0KDQo=</div>
 
 
 
