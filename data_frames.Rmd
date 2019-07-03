@@ -3,8 +3,16 @@ title: "Working with Data Frames"
 output: html_notebook
 ---
 
-R has a built-in package called 'datasets'. You can view a list of datasets by calling `data()`.
+## What are data frames? How are they different from matrices?
+**Matrix** - all the elements in a matrix should be of the same type.
+
+**Data frame** - can have elements that are of different types. columns = variables. rows = observations.
+
+R has a built-in package called 'datasets'. You can view a list of datasets in a new tab in Rstudio by calling `data()` function.
 ```{r included-data}
-data()
+
+# look at the structure of the 'mtcars' data set
+str(mtcars)
 ```
 
+Notice that every variable is type "numeric".

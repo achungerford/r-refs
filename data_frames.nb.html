@@ -1767,14 +1767,39 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<p>R has a built-in package called ‘datasets’. You can view a list of datasets by calling <code>data()</code>.</p>
+<div id="what-are-data-frames-how-are-they-different-from-matrices" class="section level2">
+<h2>What are data frames? How are they different from matrices?</h2>
+<p><strong>Matrix</strong> - all the elements in a matrix should be of the same type.</p>
+<p><strong>Data frame</strong> - can have elements that are of different types. columns = variables. rows = observations.</p>
+<p>R has a built-in package called ‘datasets’. You can view a list of datasets in a new tab in Rstudio by calling <code>data()</code> function.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBsb29rIGF0IHRoZSBzdHJ1Y3R1cmUgb2YgdGhlICdtdGNhcnMnIGRhdGEgc2V0XG5zdHIobXRjYXJzKVxuXG5gYGAifQ== -->
+<pre class="r"><code># look at the structure of the &#39;mtcars&#39; data set
+str(mtcars)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MzIgb2JzLiBvZiAgMTEgdmFyaWFibGVzOlxuICQgbXBnIDogbnVtICAyMSAyMSAyMi44IDIxLjQgMTguNyAxOC4xIDE0LjMgMjQuNCAyMi44IDE5LjIgLi4uXG4gJCBjeWwgOiBudW0gIDYgNiA0IDYgOCA2IDggNCA0IDYgLi4uXG4gJCBkaXNwOiBudW0gIDE2MCAxNjAgMTA4IDI1OCAzNjAgLi4uXG4gJCBocCAgOiBudW0gIDExMCAxMTAgOTMgMTEwIDE3NSAxMDUgMjQ1IDYyIDk1IDEyMyAuLi5cbiAkIGRyYXQ6IG51bSAgMy45IDMuOSAzLjg1IDMuMDggMy4xNSAyLjc2IDMuMjEgMy42OSAzLjkyIDMuOTIgLi4uXG4gJCB3dCAgOiBudW0gIDIuNjIgMi44OCAyLjMyIDMuMjEgMy40NCAuLi5cbiAkIHFzZWM6IG51bSAgMTYuNSAxNyAxOC42IDE5LjQgMTcgLi4uXG4gJCB2cyAgOiBudW0gIDAgMCAxIDEgMCAxIDAgMSAxIDEgLi4uXG4gJCBhbSAgOiBudW0gIDEgMSAxIDAgMCAwIDAgMCAwIDAgLi4uXG4gJCBnZWFyOiBudW0gIDQgNCA0IDMgMyAzIDMgNCA0IDQgLi4uXG4gJCBjYXJiOiBudW0gIDQgNCAxIDEgMiAxIDQgMiAyIDQgLi4uXG4ifQ== -->
+<pre><code>&#39;data.frame&#39;:   32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Notice that every variable is type “numeric”.</p>
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIldvcmtpbmcgd2l0aCBEYXRhIEZyYW1lcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNClIgaGFzIGEgYnVpbHQtaW4gcGFja2FnZSBjYWxsZWQgJ2RhdGFzZXRzJy4gWW91IGNhbiB2aWV3IGEgbGlzdCBvZiBkYXRhc2V0cyBieSBjYWxsaW5nIGBkYXRhKClgLg0KYGBge3IgaW5jbHVkZWQtZGF0YX0NCmRhdGEoKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIldvcmtpbmcgd2l0aCBEYXRhIEZyYW1lcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFdoYXQgYXJlIGRhdGEgZnJhbWVzPyBIb3cgYXJlIHRoZXkgZGlmZmVyZW50IGZyb20gbWF0cmljZXM/DQoqKk1hdHJpeCoqIC0gYWxsIHRoZSBlbGVtZW50cyBpbiBhIG1hdHJpeCBzaG91bGQgYmUgb2YgdGhlIHNhbWUgdHlwZS4NCg0KKipEYXRhIGZyYW1lKiogLSBjYW4gaGF2ZSBlbGVtZW50cyB0aGF0IGFyZSBvZiBkaWZmZXJlbnQgdHlwZXMuIGNvbHVtbnMgPSB2YXJpYWJsZXMuIHJvd3MgPSBvYnNlcnZhdGlvbnMuDQoNClIgaGFzIGEgYnVpbHQtaW4gcGFja2FnZSBjYWxsZWQgJ2RhdGFzZXRzJy4gWW91IGNhbiB2aWV3IGEgbGlzdCBvZiBkYXRhc2V0cyBpbiBhIG5ldyB0YWIgaW4gUnN0dWRpbyBieSBjYWxsaW5nIGBkYXRhKClgIGZ1bmN0aW9uLg0KYGBge3IgaW5jbHVkZWQtZGF0YX0NCg0KIyBsb29rIGF0IHRoZSBzdHJ1Y3R1cmUgb2YgdGhlICdtdGNhcnMnIGRhdGEgc2V0DQpzdHIobXRjYXJzKQ0KYGBgDQoNCk5vdGljZSB0aGF0IGV2ZXJ5IHZhcmlhYmxlIGlzIHR5cGUgIm51bWVyaWMiLg==</div>
 
 
 
