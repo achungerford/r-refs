@@ -95,10 +95,19 @@ diameter_vector <- planets_df$diameter
 ## Use columns to get values from other columns
 Say you wan to get the names of the planets with rings. You're going to use the rings column to get only the planets where rings = TRUE.
 ```{r}
+planets_df
+
 # isolate the rings column into a vector
 rings_vector <- planets_df$rings
 
 # if planet has rings, get the name of the planet
 planets_df[rings_vector, 1:5]
+```
+
+## `subset()` is a shortcut for the same thing
+### `subset(my_df, subset = some_condition)`
+```{r subset-method}
+# get the planet names whose diameter is smaller than Earth (Earth = 1)
+subset(planets_df, subset = diameter < 1)
 ```
 
