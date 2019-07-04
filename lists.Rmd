@@ -14,3 +14,22 @@ A list in R allows you to gather a variety of objects under one name (that is, t
 
 A list in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. You can think of a list as a super data type because you can store practically any piece of information in it
 
+## `list()` in action
+```{r example}
+# create a vector with numerics 1 through 10
+my_vector <- 1:10
+my_vector
+
+# create a matrix with numerics 1 through 9
+my_matrix <- matrix(1:9, ncol = 3)
+my_matrix
+
+# create a df with the first 10 elements of the 'mtcars'
+my_df <- mtcars[1:10,]
+my_df
+
+# construct a list that contains the variables (my_vector, my_matrix, my_df)
+my_list <- list(my_vector, my_matrix, my_df)
+my_list
+```
+

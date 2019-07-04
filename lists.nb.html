@@ -1779,10 +1779,76 @@ $(document).ready(function () {
 <h1>What are lists in R?</h1>
 <p>A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.</p>
 <p>A list in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. You can think of a list as a super data type because you can store practically any piece of information in it</p>
+<div id="list-in-action" class="section level2">
+<h2><code>list()</code> in action</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgYSB2ZWN0b3Igd2l0aCBudW1lcmljcyAxIHRocm91Z2ggMTBcbm15X3ZlY3RvciA8LSAxOjEwXG5teV92ZWN0b3JcbmBgYCJ9 -->
+<pre class="r"><code># create a vector with numerics 1 through 10
+my_vector &lt;- 1:10
+my_vector</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgYSBtYXRyaXggd2l0aCBudW1lcmljcyAxIHRocm91Z2ggOVxubXlfbWF0cml4IDwtIG1hdHJpeCgxOjksIG5jb2wgPSAzKVxubXlfbWF0cml4XG5gYGAifQ== -->
+<pre class="r"><code># create a matrix with numerics 1 through 9
+my_matrix &lt;- matrix(1:9, ncol = 3)
+my_matrix</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAxICAgIDQgICAgN1xuWzIsXSAgICAyICAgIDUgICAgOFxuWzMsXSAgICAzICAgIDYgICAgOVxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgYSBkZiB3aXRoIHRoZSBmaXJzdCAxMCBlbGVtZW50cyBvZiB0aGUgJ210Y2Fycydcbm15X2RmIDwtIG10Y2Fyc1sxOjEwLF1cbm15X2RmXG5gYGAifQ== -->
+<pre class="r"><code># create a df with the first 10 elements of the &#39;mtcars&#39;
+my_df &lt;- mtcars[1:10,]
+my_df</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQnAxVU1XelRRQlM5T0hHVE9DUU5vZ01zbGNjT0tMaEpHcklnYm9nRUF3aFJwQ2FpRmRMRnVSWkxqdTJlbmJSMFl1bmN1WWdCQ2VZdUxCMHJacGhaWVdGaFFVSXdGczYrZjBkc0NFaDg2ZkwrZi8vL2QvL09kdFo3ZzZZeE1CQkNHc3JyT2FUbHVWdlErRThPRlZBNXhuMkU4cGU0VStHcnhwZUIxMUJpQ2p0dlkzdUgxN1lUdzgzWHJkaHc4OG94dDJmNDZySEFMdVJsZlV1WTByME1laExybWRpY0U5Zi9YSzkwUjhCTDNBUU1oQUNlUGhYb1p1TGhocGlYd1B5anIrbDVONkZPWWgrblkvcEI0RVBndlJjQzc4SCsvVE9Cajg3Uzh5NktlMUZZZy9zcXZYeHYzQWhlNFRMd0Mwc0hIMitkTE9IeVNlTGc2dUh5NmYzUGgzaHhhK1hibTZNdGlVcTNFRWNyMzNFUjl0ZU9rZ0pjanJ1V1QzRUYraXVnZDBIbWdaZjdRcDNTdFNaQ2QxVVhkYzNuWXY5V0VBKzhxL2gyVit4ekRmVGJNRWZuRTd3M2Q1SnpTbDJVc1p0ZjBwamw1OVhONUJQZHYrVC8xOFE5MUVYd0c1YitnWFA2NXVsbTU4WW9FOWZUdkVLbG0vckFkWStNYWNpZE9GMEJNajhPZHFSclAzSEJMWXljTUFCZmV4d29scEZJc252U0sreUcxSmJzTkpRZUdjdjhEaVZNK2paaHc4eFlaZWJ2TldaSE0yVGlMamtZRVhOOTBBYWlxZ2l6VCtUVVJvOUU0Y1F6cjY5YXdOUnUrOHlqa2RrMmU4eVpVbUF2QXZzZzhGbEVodjVFemwvY0lLNUR2RWpwVGNLSU1yUFZzZFFjbE5sbXMyMzFnQ2dKb21XbDQ2NlZ2WERiSmFFOGxTU05FWWxJWTV2eEEvUG9QTk5TOUlQSThUM2VwTVYveFhxbU9jY3lSSkh1azNIZ1VpUStveHlzS3FBeDQxZkVWdG9Qa05CQllvRjZPNDRucjBsM3laREsxNkRHSDAzeVpCb0JjMzdkRUdmRFJ1UkhSTlladHU5S0pqa1RPdjhKT0tJSEozQUdBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIGNvbnN0cnVjdCBhIGxpc3QgdGhhdCBjb250YWlucyB0aGUgdmFyaWFibGVzIChteV92ZWN0b3IsIG15X21hdHJpeCwgbXlfZGYpXG5teV9saXN0IDwtIGxpc3QobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKVxubXlfbGlzdFxuYGBgIn0= -->
+<pre class="r"><code>
+# construct a list that contains the variables (my_vector, my_matrix, my_df)
+my_list &lt;- list(my_vector, my_matrix, my_df)
+my_list</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiBbMV0gIDEgIDIgIDMgIDQgIDUgIDYgIDcgIDggIDkgMTBcblxuW1syXV1cbiAgICAgWywxXSBbLDJdIFssM11cblsxLF0gICAgMSAgICA0ICAgIDdcblsyLF0gICAgMiAgICA1ICAgIDhcblszLF0gICAgMyAgICA2ICAgIDlcblxuW1szXV1cbiJ9 -->
+<pre><code>[[1]]
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+[[2]]
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+[[3]]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQnAxVU1XelRRQlM5T0hHVE9DUU5vZ01zbGNjT0tMaEpHcklnYm9nRUF3aFJwQ2FpRmRMRnVSWkxqdTJlbmJSMFl1bmN1WWdCQ2VZdUxCMHJacGhaWVdGaFFVSXdGczYrZjBkc0NFaDg2ZkwrZi8vL2QvL09kdFo3ZzZZeE1CQkNHc3JyT2FUbHVWdlErRThPRlZBNXhuMkU4cGU0VStHcnhwZUIxMUJpQ2p0dlkzdUgxN1lUdzgzWHJkaHc4OG94dDJmNDZySEFMdVJsZlV1WTByME1laExybWRpY0U5Zi9YSzkwUjhCTDNBUU1oQUNlUGhYb1p1TGhocGlYd1B5anIrbDVONkZPWWgrblkvcEI0RVBndlJjQzc4SCsvVE9Cajg3Uzh5NktlMUZZZy9zcXZYeHYzQWhlNFRMd0Mwc0hIMitkTE9IeVNlTGc2dUh5NmYzUGgzaHhhK1hibTZNdGlVcTNFRWNyMzNFUjl0ZU9rZ0pjanJ1V1QzRUYraXVnZDBIbWdaZjdRcDNTdFNaQ2QxVVhkYzNuWXY5V0VBKzhxL2gyVit4ekRmVGJNRWZuRTd3M2Q1SnpTbDJVc1p0ZjBwamw1OVhONUJQZHYrVC8xOFE5MUVYd0c1YitnWFA2NXVsbTU4WW9FOWZUdkVLbG0vckFkWStNYWNpZE9GMEJNajhPZHFSclAzSEJMWXljTUFCZmV4d29scEZJc252U0sreUcxSmJzTkpRZUdjdjhEaVZNK2paaHc4eFlaZWJ2TldaSE0yVGlMamtZRVhOOTBBYWlxZ2l6VCtUVVJvOUU0Y1F6cjY5YXdOUnUrOHlqa2RrMmU4eVpVbUF2QXZzZzhGbEVodjVFemwvY0lLNUR2RWpwVGNLSU1yUFZzZFFjbE5sbXMyMzFnQ2dKb21XbDQ2NlZ2WERiSmFFOGxTU05FWWxJWTV2eEEvUG9QTk5TOUlQSThUM2VwTVYveFhxbU9jY3lSSkh1azNIZ1VpUStveHlzS3FBeDQxZkVWdG9Qa05CQllvRjZPNDRucjBsM3laREsxNkRHSDAzeVpCb0JjMzdkRUdmRFJ1UkhSTlladHU5S0pqa1RPdjhKT0tJSEozQUdBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkJhc2UgUjogTGlzdHMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjIyBMZXQncyByZWNhcDoNCg0KKiAqKlZlY3RvcnMqKiAob25lIGRpbWVuc2lvbmFsIGFycmF5KTogY2FuIGhvbGQgbnVtZXJpYywgY2hhcmFjdGVyIG9yIGxvZ2ljYWwgdmFsdWVzLiBUaGUgZWxlbWVudHMgaW4gYSB2ZWN0b3IgYWxsIGhhdmUgdGhlIHNhbWUgZGF0YSB0eXBlLg0KKiAqKk1hdHJpY2VzKiogKHR3byBkaW1lbnNpb25hbCBhcnJheSk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gVGhlIGVsZW1lbnRzIGluIGEgbWF0cml4IGFsbCBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZS4NCiogKipEYXRhIGZyYW1lcyoqICh0d28tZGltZW5zaW9uYWwgb2JqZWN0cyk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gV2l0aGluIGEgY29sdW1uIGFsbCBlbGVtZW50cyBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZSwgYnV0IGRpZmZlcmVudCBjb2x1bW5zIGNhbiBiZSBvZiBkaWZmZXJlbnQgZGF0YSB0eXBlLg0KDQojIFdoYXQgYXJlIGxpc3RzIGluIFI/DQpBIGxpc3QgaW4gUiBhbGxvd3MgeW91IHRvIGdhdGhlciBhIHZhcmlldHkgb2Ygb2JqZWN0cyB1bmRlciBvbmUgbmFtZSAodGhhdCBpcywgdGhlIG5hbWUgb2YgdGhlIGxpc3QpIGluIGFuIG9yZGVyZWQgd2F5LiBUaGVzZSBvYmplY3RzIGNhbiBiZSBtYXRyaWNlcywgdmVjdG9ycywgZGF0YSBmcmFtZXMsIGV2ZW4gb3RoZXIgbGlzdHMsIGV0Yy4gSXQgaXMgbm90IGV2ZW4gcmVxdWlyZWQgdGhhdCB0aGVzZSBvYmplY3RzIGFyZSByZWxhdGVkIHRvIGVhY2ggb3RoZXIgaW4gYW55IHdheS4NCg0KQSBsaXN0IGluIFIgaXMgc2ltaWxhciB0byB5b3VyIHRvLWRvIGxpc3QgYXQgd29yayBvciBzY2hvb2w6IHRoZSBkaWZmZXJlbnQgaXRlbXMgb24gdGhhdCBsaXN0IG1vc3QgbGlrZWx5IGRpZmZlciBpbiBsZW5ndGgsIGNoYXJhY3RlcmlzdGljLCBhbmQgdHlwZSBvZiBhY3Rpdml0eSB0aGF0IGhhcyB0byBiZSBkb25lLiBZb3UgY2FuIHRoaW5rIG9mIGEgbGlzdCBhcyBhIHN1cGVyIGRhdGEgdHlwZSBiZWNhdXNlIHlvdSBjYW4gc3RvcmUgcHJhY3RpY2FsbHkgYW55IHBpZWNlIG9mIGluZm9ybWF0aW9uIGluIGl0DQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkJhc2UgUjogTGlzdHMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjIyBMZXQncyByZWNhcDoNCg0KKiAqKlZlY3RvcnMqKiAob25lIGRpbWVuc2lvbmFsIGFycmF5KTogY2FuIGhvbGQgbnVtZXJpYywgY2hhcmFjdGVyIG9yIGxvZ2ljYWwgdmFsdWVzLiBUaGUgZWxlbWVudHMgaW4gYSB2ZWN0b3IgYWxsIGhhdmUgdGhlIHNhbWUgZGF0YSB0eXBlLg0KKiAqKk1hdHJpY2VzKiogKHR3byBkaW1lbnNpb25hbCBhcnJheSk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gVGhlIGVsZW1lbnRzIGluIGEgbWF0cml4IGFsbCBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZS4NCiogKipEYXRhIGZyYW1lcyoqICh0d28tZGltZW5zaW9uYWwgb2JqZWN0cyk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gV2l0aGluIGEgY29sdW1uIGFsbCBlbGVtZW50cyBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZSwgYnV0IGRpZmZlcmVudCBjb2x1bW5zIGNhbiBiZSBvZiBkaWZmZXJlbnQgZGF0YSB0eXBlLg0KDQojIFdoYXQgYXJlIGxpc3RzIGluIFI/DQpBIGxpc3QgaW4gUiBhbGxvd3MgeW91IHRvIGdhdGhlciBhIHZhcmlldHkgb2Ygb2JqZWN0cyB1bmRlciBvbmUgbmFtZSAodGhhdCBpcywgdGhlIG5hbWUgb2YgdGhlIGxpc3QpIGluIGFuIG9yZGVyZWQgd2F5LiBUaGVzZSBvYmplY3RzIGNhbiBiZSBtYXRyaWNlcywgdmVjdG9ycywgZGF0YSBmcmFtZXMsIGV2ZW4gb3RoZXIgbGlzdHMsIGV0Yy4gSXQgaXMgbm90IGV2ZW4gcmVxdWlyZWQgdGhhdCB0aGVzZSBvYmplY3RzIGFyZSByZWxhdGVkIHRvIGVhY2ggb3RoZXIgaW4gYW55IHdheS4NCg0KQSBsaXN0IGluIFIgaXMgc2ltaWxhciB0byB5b3VyIHRvLWRvIGxpc3QgYXQgd29yayBvciBzY2hvb2w6IHRoZSBkaWZmZXJlbnQgaXRlbXMgb24gdGhhdCBsaXN0IG1vc3QgbGlrZWx5IGRpZmZlciBpbiBsZW5ndGgsIGNoYXJhY3RlcmlzdGljLCBhbmQgdHlwZSBvZiBhY3Rpdml0eSB0aGF0IGhhcyB0byBiZSBkb25lLiBZb3UgY2FuIHRoaW5rIG9mIGEgbGlzdCBhcyBhIHN1cGVyIGRhdGEgdHlwZSBiZWNhdXNlIHlvdSBjYW4gc3RvcmUgcHJhY3RpY2FsbHkgYW55IHBpZWNlIG9mIGluZm9ybWF0aW9uIGluIGl0DQoNCiMjIGBsaXN0KClgIGluIGFjdGlvbg0KYGBge3IgZXhhbXBsZX0NCiMgY3JlYXRlIGEgdmVjdG9yIHdpdGggbnVtZXJpY3MgMSB0aHJvdWdoIDEwDQpteV92ZWN0b3IgPC0gMToxMA0KbXlfdmVjdG9yDQoNCiMgY3JlYXRlIGEgbWF0cml4IHdpdGggbnVtZXJpY3MgMSB0aHJvdWdoIDkNCm15X21hdHJpeCA8LSBtYXRyaXgoMTo5LCBuY29sID0gMykNCm15X21hdHJpeA0KDQojIGNyZWF0ZSBhIGRmIHdpdGggdGhlIGZpcnN0IDEwIGVsZW1lbnRzIG9mIHRoZSAnbXRjYXJzJw0KbXlfZGYgPC0gbXRjYXJzWzE6MTAsXQ0KbXlfZGYNCg0KIyBjb25zdHJ1Y3QgYSBsaXN0IHRoYXQgY29udGFpbnMgdGhlIHZhcmlhYmxlcyAobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKQ0KbXlfbGlzdCA8LSBsaXN0KG15X3ZlY3RvciwgbXlfbWF0cml4LCBteV9kZikNCm15X2xpc3QNCmBgYA0KDQo=</div>
 
 
 
