@@ -120,5 +120,9 @@ order(a)
 
 # use index ranks to re-shuffle: values lowest to highest
 a[order(a)]
+
+# Example: arrange planets from smallest to biggest diameter
+positions <- order(planets_df$diameter)
+planets_df[positions, ]
 ```
 
