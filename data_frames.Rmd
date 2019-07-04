@@ -111,3 +111,14 @@ planets_df[rings_vector, 1:5]
 subset(planets_df, subset = diameter < 1)
 ```
 
+## Sorting data - `order()` 
+`order()` is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+```{r order}
+# index position: values lowest to hightest
+a <- c(100, 10, 1000, 5)
+order(a)
+
+# use index ranks to re-shuffle: values lowest to highest
+a[order(a)]
+```
+
