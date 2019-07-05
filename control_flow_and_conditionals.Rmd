@@ -1,0 +1,128 @@
+---
+title: "Control Flow & Conditionals"
+output: html_notebook
+---
+
+## Relational Operators
+Relational operators are for comparisons. They let us see how one R object relates to another.
+
+* TRUE: 1
+* FALSE: 0
+* Equality `==`
+* Inequality `!=`
+* Greater than `>`
+* Less than `<`
+* Greater than or equal to `>=`
+* Less than or equal to `<=`
+
+
+```{r equality}
+# compare strings
+"compare" == "strings"
+
+# compare numbers
+5 == 10
+
+# check if hello is not goodbye
+"hello" != "goodbye"
+
+```
+
+## Greater or Less than - alphabetical
+For character strings, the greater-than less-than operators check the first letter of the string. For string comparison, R determines the greater than relationship based on alphabetical order. 
+```{r}
+# since 'H' comes after 'G' in the alphabet, "Hello" is greater than "Goodbye"
+"Hello" > "Goodbye"
+
+# compare similar phrases
+"raining" <= "raining dogs"
+
+# compare capitalization
+"useR" > "user"
+```
+
+## Relational Operators with Vectors
+Say you want to compare your profile views - github v facebook
+```{r}
+# create two profile views vectors for the example
+github <- c(5, 25, 10, 15, 0, 30, 20)
+fb <- c(50, 250, 10, 7, 35, 100, 25)
+
+# check which days the github views exceeded 10
+github > 10
+
+# check when number of github views are less than or equal to fb views
+github <= fb
+```
+
+## Relational Operators with Matrices
+R's ability to deal with different data structures for comparisons does not stop at vectors. Matrices and relational operators also work together seamlessly.
+```{r}
+# create a 2x7 matrix using the github and fb vectors
+views <- matrix(c(github, fb), nrow = 2, byrow = TRUE)
+views
+
+# create row and column name vectors
+profiles <- c("github", "fb")
+days <- c("M", "T", "W", "R", "F", "Sat", "Sun")
+
+# add names to matrix
+rownames(views) <- profiles
+colnames(views) <- days
+
+# show new matrix
+views
+```
+
+Comparisons in a matrix
+```{r}
+# when does views = 13?
+views == 13
+
+# when are views <= 15?
+views <= 15
+```
+
+## Logical Operators
+
+* AND operator `&` - returns TRUE only if both logical values are true
+* OR operator `|` - returns TRUE if either logical value is true
+* NOT operator `!`
+
+```{r}
+# AND
+TRUE & TRUE
+
+TRUE & FALSE
+
+FALSE & TRUE
+
+FALSE & FALSE
+```
+
+### AND operator on numerical expressions
+```{r}
+# set variable x for example
+x <- 10
+
+# if both logicals are true, this evaluates to TRUE
+x > 5 & x < 15
+
+# if either epxression is false, this evaluates to FALSE
+x > 5 & x < 9
+
+```
+
+
+
+```{r}
+# OR
+TRUE | TRUE
+
+TRUE | FALSE
+
+FALSE | TRUE
+
+FALSE | FALSE
+```
+
