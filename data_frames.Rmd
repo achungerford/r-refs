@@ -77,6 +77,9 @@ head(planets_df)
 ```{r}
 # Select & print out the first 5 values in the "diameter" column of planets_df
 planets_df[1:5, 3]
+
+# Same, but use the name 'diameter'
+planets_df[1:5, "diameter"]
 ```
 
 ## Select entire column
