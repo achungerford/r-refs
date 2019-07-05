@@ -1781,6 +1781,8 @@ $(document).ready(function () {
 <p>A list in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, and type of activity that has to be done. You can think of a list as a super data type because you can store practically any piece of information in it</p>
 <div id="list-in-action" class="section level2">
 <h2><code>list()</code> in action</h2>
+<div id="create-components-that-will-become-part-of-the-list" class="section level3">
+<h3>create components that will become part of the list</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgYSB2ZWN0b3Igd2l0aCBudW1lcmljcyAxIHRocm91Z2ggMTBcbm15X3ZlY3RvciA8LSAxOjEwXG5teV92ZWN0b3JcbmBgYCJ9 -->
@@ -1814,9 +1816,15 @@ my_df</code></pre>
   </script>
 </div>
 <!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIGNvbnN0cnVjdCBhIGxpc3QgdGhhdCBjb250YWlucyB0aGUgdmFyaWFibGVzIChteV92ZWN0b3IsIG15X21hdHJpeCwgbXlfZGYpXG5teV9saXN0IDwtIGxpc3QobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKVxubXlfbGlzdFxuYGBgIn0= -->
-<pre class="r"><code>
-# construct a list that contains the variables (my_vector, my_matrix, my_df)
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="create-the-list" class="section level3">
+<h3>Create the list</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjb25zdHJ1Y3QgYSBsaXN0IHRoYXQgY29udGFpbnMgdGhlIHZhcmlhYmxlcyAobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKVxubXlfbGlzdCA8LSBsaXN0KG15X3ZlY3RvciwgbXlfbWF0cml4LCBteV9kZilcbm15X2xpc3RcbmBgYCJ9 -->
+<pre class="r"><code># construct a list that contains the variables (my_vector, my_matrix, my_df)
 my_list &lt;- list(my_vector, my_matrix, my_df)
 my_list</code></pre>
 <!-- rnb-source-end -->
@@ -1832,7 +1840,7 @@ my_list</code></pre>
 
 [[3]]</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQnAxVU1XelRRQlM5T0hHVE9DUU5vZ01zbGNjT0tMaEpHcklnYm9nRUF3aFJwQ2FpRmRMRnVSWkxqdTJlbmJSMFl1bmN1WWdCQ2VZdUxCMHJacGhaWVdGaFFVSXdGczYrZjBkc0NFaDg2ZkwrZi8vL2QvL09kdFo3ZzZZeE1CQkNHc3JyT2FUbHVWdlErRThPRlZBNXhuMkU4cGU0VStHcnhwZUIxMUJpQ2p0dlkzdUgxN1lUdzgzWHJkaHc4OG94dDJmNDZySEFMdVJsZlV1WTByME1laExybWRpY0U5Zi9YSzkwUjhCTDNBUU1oQUNlUGhYb1p1TGhocGlYd1B5anIrbDVONkZPWWgrblkvcEI0RVBndlJjQzc4SCsvVE9Cajg3Uzh5NktlMUZZZy9zcXZYeHYzQWhlNFRMd0Mwc0hIMitkTE9IeVNlTGc2dUh5NmYzUGgzaHhhK1hibTZNdGlVcTNFRWNyMzNFUjl0ZU9rZ0pjanJ1V1QzRUYraXVnZDBIbWdaZjdRcDNTdFNaQ2QxVVhkYzNuWXY5V0VBKzhxL2gyVit4ekRmVGJNRWZuRTd3M2Q1SnpTbDJVc1p0ZjBwamw1OVhONUJQZHYrVC8xOFE5MUVYd0c1YitnWFA2NXVsbTU4WW9FOWZUdkVLbG0vckFkWStNYWNpZE9GMEJNajhPZHFSclAzSEJMWXljTUFCZmV4d29scEZJc252U0sreUcxSmJzTkpRZUdjdjhEaVZNK2paaHc4eFlaZWJ2TldaSE0yVGlMamtZRVhOOTBBYWlxZ2l6VCtUVVJvOUU0Y1F6cjY5YXdOUnUrOHlqa2RrMmU4eVpVbUF2QXZzZzhGbEVodjVFemwvY0lLNUR2RWpwVGNLSU1yUFZzZFFjbE5sbXMyMzFnQ2dKb21XbDQ2NlZ2WERiSmFFOGxTU05FWWxJWTV2eEEvUG9QTk5TOUlQSThUM2VwTVYveFhxbU9jY3lSSkh1azNIZ1VpUStveHlzS3FBeDQxZkVWdG9Qa05CQllvRjZPNDRucjBsM3laREsxNkRHSDAzeVpCb0JjMzdkRUdmRFJ1UkhSTlladHU5S0pqa1RPdjhKT0tJSEozQUdBQUE9In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQnAxVU1XelRRQlM5T0hHVE9DUU5vZ01zbGNjT0VOd2tEVmtRTjBTQ0FZUW9VaFBSQ3VuaXVNR1NZN3ZuU3dxZFdEcDNMbUpBZ3JrTFM4ZUtHV1pXV0ZoWWtCQ01oYlB2MzFFYkFoSmZ1cnovMy8vLzNiK3puZlhlb0drTURJU1Fodko2RG1sNTdoWTAvcE5EQlZTTzhURkMrUXZjcWZCVjQ4dkFheWd4aFoyM3NiM0RhOXVKNGViclZteTRlZW1RMnpOOCtWQmdGL0t5dmlWTTZWNEVQWW4xVEd6T2lldC9ybGU2SStBbGJnS0dRZ0RQbmdyME12RndROHhMWVA3UjEvUzhtMUFuc1kvVHNmTkI0QVBnL1JjQzc4TCsvUk9CRDAvUzh5NktlMUZZZy9zcXZYeHZYQTlmNFRMd0MwdDdIMjhlTGVIeVVlTGc2djd5OGIzUCszaHhhK1hibTRNdGlVcTNFRWNyMzNFUjl0Y09rZ0pjanJ1V2ozRUYraXVnZDA3bWdaZjdRcDNTdGFaQ2QxVVhkYzNuWXY5V0dBKzhvL2gyVit4ekZmVGJNRWZuRTd3M3Q1TnpTbDJVc1J0ZjBwamw1OVdkeVNlNmY4bi9yNGw3cUl2Z055ejlBK2YwemRQTnpvMVJKcTZuZVlWS04vV0I2ejZaT0JGMzRuUUZ5UHdrSEV2WGZ1S0JXeGk1VVFpKzlpaFVMQ1ZNc3J2U0sreEVqaTNaV1NROU1wSDVzVU9vOUcxQ2g1bXh5alRZYlp3ZHpaQ0pPMlJ2Uk16MVFSdUlxaUxNUHBGVEd6M0NvcWx2WGx1MWdLbmRDcWp2TUxOdDlxZzdjNEE5RCt6OU1LQ01ESU9wbkwrNFFUeVgrRXpwVFNQbVVMUFZzZFFjRHJYTlp0dnFBVkVTUk10S3gxMHJlK0cyUnlKNUtra2FJOEpJWTV2eUEvUG9OTk5TREVMbUJqNXYwdUsvWWozVG5LTVpvbUpUaHpEbml1ZEdESWxQS1FlckNtaWM4U3RpTyswSHlPZ2dzK0Q0WTllWFY2VjdaT2pJVjZIR0gwL3lkQm9oZFgvZEVtZWpCZ3NZa1hXR0hYaVNTYzZGVG44Qy82SDZiblFHQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
@@ -1844,11 +1852,134 @@ my_list</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+</div>
+<div id="select-components-of-a-list---listname" class="section level2">
+<h2>Select components of a list - <code>listName[[]]</code></h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCBvdXQgdGhlIHZlY3RvclxubXlfbGlzdFtbMV1dXG5gYGAifQ== -->
+<pre class="r"><code># print out the vector
+my_list[[1]]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCBvdXQgdGhlICc3JyBmcm9tIHRoZSBtYXRyaXhcbm15X2xpc3RbWzJdXVsxLCAzXVxuYGBgIn0= -->
+<pre class="r"><code># print out the &#39;7&#39; from the matrix
+my_list[[2]][1, 3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDdcbiJ9 -->
+<pre><code>[1] 7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCBvdXQgdGhlIGhwIG9mIHRoZSBEYXRzdW4gNzEwXG5teV9saXN0W1szXV1bMywgNF1cbmBgYCJ9 -->
+<pre class="r"><code># print out the hp of the Datsun 710
+my_list[[3]][3, 4]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDkzXG4ifQ== -->
+<pre><code>[1] 93</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="name-the-component-items-in-your-list" class="section level2">
+<h2>Name the component items in your list</h2>
+<p>Remembering numbers is difficult. Remembering which number applies to which component is especially difficult. It’s easier to remember components by a name we assign to them.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBZGFwdCBsaXN0KCkgY2FsbCB0byBnaXZlIHRoZSBjb21wb25lbnRzIG5hbWVzXG5teV9saXN0IDwtIGxpc3QodmVjID0gbXlfdmVjdG9yLCBtYXQgPSBteV9tYXRyaXgsIGRmID0gbXlfZGYpXG5cbm15X2xpc3RcbmBgYCJ9 -->
+<pre class="r"><code># Adapt list() call to give the components names
+my_list &lt;- list(vec = my_vector, mat = my_matrix, df = my_df)
+
+my_list</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJGB2ZWNgXG4gWzFdICAxICAyICAzICA0ICA1ICA2ICA3ICA4ICA5IDEwXG5cbiRtYXRcbiAgICAgWywxXSBbLDJdIFssM11cblsxLF0gICAgMSAgICA0ICAgIDdcblsyLF0gICAgMiAgICA1ICAgIDhcblszLF0gICAgMyAgICA2ICAgIDlcblxuJGRmXG4ifQ== -->
+<pre><code>$`vec`
+ [1]  1  2  3  4  5  6  7  8  9 10
+
+$mat
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+$df</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjEwfSwicmRmIjoiSDRzSUFBQUFBQUFBQnAxVVBXelRRQlMrT0VtVE9PUUgwUUdXeW1NSENHNlNoaXlJR3lMQkFFSVVxWWxvaFhSeDNHREpzZDJ6azBJbmxzNmRpeGlRWU83QzByRmlocGtWRmhZV0pBUmp3ZmE5ZDhTR2dNU1RMdDk3MzN2MzNidG5PeHU5UVZNZHFJUVFoV1R6R2FKa1F6ZW5oRDhaa2lPbENCOFRrcjBRT3VWd1ZjT2wwblVTbThUTzI4amUwZldkMkdqemRTc3kycngwRk5vemV2bElZQmZ5V044U0puVXZnaDVpUFJWckMrTDZuK3VsN2doNHhDMUFUd2pRMlZPQmRpb2Vib3ArR2ZRLytwcnNkd3ZxRVBzMEdac2ZCRDRBM25raDhDNmMzejhWK1BBMDJXOU56RVZpRmVaVmZQbGV2ZTY5b2lYZ2w1YjNQOTQ4WHFhbDQ5aWhsWU9WazN1ZkQyaHRlL1hibThOdFJLbWJpNkxWNzdRQTV5dUhjUUV0UmJ0V1RtZ1o5cGRCN3h6bWdjZHpvVTdxNmxPaHU1WVhkYzNuNHZ5V0Z6VzhLL2wyVjV4ekZmVGIwRWZuRTd3M3QrTjdvaTVKMlkwdlNVenppK3JtOHJIdVgvTC9hMklPZFJIOGhzVi80SUo5aTNUVGZWT1NpdXRKWHFMVVRYemdlWWROVEQ5MG9uUVp5T3pFRzZOclBMSEJ6WTBzM3dOZmVlUkpsck1BMlQzMGNydSthU0E3ODlGakU4eVBUY2JSTnhnZnB0b3FjWGV2TWQrYWlvazdiSC9FdEkxQkc0aUtKTFErdzY3VkhndjhxYU5kVzlPQnFkNXl1V01HV2x2cmNXdG1BbnNlMlB1ZXl3TTJkS2ZZZjJHVDJSWnpBcWszOVFPVGE2Mk9MdnN3dWFFMTIzb1BpS0lnV25veTd1cnBnUnMyOC9GV1NLb2pGckRHRGc4dkhFWm5xUzBGMXdzczF3azNLZEZmY1Q2MU9jTlRSQzBhM0JYRG5YaXVZenFCVDhUbmxJRlZBVlRuL0xJNFV2a0JVbm1RV2pLZHNlWGd1UEkyRzVyNE9sVERSeFEvb1liSHJWK1RDbG0vRWJnQnd6clZjRzFrNHJ1UnM1OHZQTkZZZUFZQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTkFcbiJ9 -->
+<pre><code>NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="select-elements-from-named-components-in-a-list" class="section level2">
+<h2>Select elements from named components in a list</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBvdXIgbGlzdFxubXlfbGlzdCA8LSBsaXN0KHZlYyA9IG15X3ZlY3RvciwgbWF0ID0gbXlfbWF0cml4LCBkZiA9IG15X2RmKVxuXG4jIHByaW50IHRoZSB2ZWN0b3Jcbm15X2xpc3RbW1widmVjXCJdXVxuYGBgIn0= -->
+<pre class="r"><code># our list
+my_list &lt;- list(vec = my_vector, mat = my_matrix, df = my_df)
+
+# print the vector
+my_list[[&quot;vec&quot;]]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCB0aGUgJzcnIGZyb20gdGhlIG1hdHJpeFxubXlfbGlzdFtbXCJtYXRcIl1dWzEsIDNdXG5gYGAifQ== -->
+<pre class="r"><code># print the &#39;7&#39; from the matrix
+my_list[[&quot;mat&quot;]][1, 3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDdcbiJ9 -->
+<pre><code>[1] 7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCB0aGUgaHAgZm9yIHRoZSBEYXRzdW4gNzEwXG5teV9saXN0W1tcImRmXCJdXVszLCA0XVxuYGBgIn0= -->
+<pre class="r"><code># print the hp for the Datsun 710
+my_list[[&quot;df&quot;]][3, 4]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDkzXG4ifQ== -->
+<pre><code>[1] 93</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyByZXBlYXQgdGhlIHN0ZXBzIGFib3ZlIHVzaW5nICRcblxuIyBwcmludCB0aGUgdmVjdG9yXG5teV9saXN0JHZlY1xuYGBgIn0= -->
+<pre class="r"><code># repeat the steps above using $
+
+# print the vector
+my_list$vec</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMSAgMiAgMyAgNCAgNSAgNiAgNyAgOCAgOSAxMFxuIn0= -->
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCB0aGUgJzcnIGZyb20gdGhlIG1hdHJpeFxubXlfbGlzdCRtYXRbMSwgM11cbmBgYCJ9 -->
+<pre class="r"><code># print the &#39;7&#39; from the matrix
+my_list$mat[1, 3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDdcbiJ9 -->
+<pre><code>[1] 7</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcmludCB0aGUgaHAgZm9yIHRoZSBEYXRzdW4gNzEwXG5teV9saXN0JGRmWzMsIDRdXG5gYGAifQ== -->
+<pre class="r"><code># print the hp for the Datsun 710
+my_list$df[3, 4]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDkzXG4ifQ== -->
+<pre><code>[1] 93</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkJhc2UgUjogTGlzdHMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjIyBMZXQncyByZWNhcDoNCg0KKiAqKlZlY3RvcnMqKiAob25lIGRpbWVuc2lvbmFsIGFycmF5KTogY2FuIGhvbGQgbnVtZXJpYywgY2hhcmFjdGVyIG9yIGxvZ2ljYWwgdmFsdWVzLiBUaGUgZWxlbWVudHMgaW4gYSB2ZWN0b3IgYWxsIGhhdmUgdGhlIHNhbWUgZGF0YSB0eXBlLg0KKiAqKk1hdHJpY2VzKiogKHR3byBkaW1lbnNpb25hbCBhcnJheSk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gVGhlIGVsZW1lbnRzIGluIGEgbWF0cml4IGFsbCBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZS4NCiogKipEYXRhIGZyYW1lcyoqICh0d28tZGltZW5zaW9uYWwgb2JqZWN0cyk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gV2l0aGluIGEgY29sdW1uIGFsbCBlbGVtZW50cyBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZSwgYnV0IGRpZmZlcmVudCBjb2x1bW5zIGNhbiBiZSBvZiBkaWZmZXJlbnQgZGF0YSB0eXBlLg0KDQojIFdoYXQgYXJlIGxpc3RzIGluIFI/DQpBIGxpc3QgaW4gUiBhbGxvd3MgeW91IHRvIGdhdGhlciBhIHZhcmlldHkgb2Ygb2JqZWN0cyB1bmRlciBvbmUgbmFtZSAodGhhdCBpcywgdGhlIG5hbWUgb2YgdGhlIGxpc3QpIGluIGFuIG9yZGVyZWQgd2F5LiBUaGVzZSBvYmplY3RzIGNhbiBiZSBtYXRyaWNlcywgdmVjdG9ycywgZGF0YSBmcmFtZXMsIGV2ZW4gb3RoZXIgbGlzdHMsIGV0Yy4gSXQgaXMgbm90IGV2ZW4gcmVxdWlyZWQgdGhhdCB0aGVzZSBvYmplY3RzIGFyZSByZWxhdGVkIHRvIGVhY2ggb3RoZXIgaW4gYW55IHdheS4NCg0KQSBsaXN0IGluIFIgaXMgc2ltaWxhciB0byB5b3VyIHRvLWRvIGxpc3QgYXQgd29yayBvciBzY2hvb2w6IHRoZSBkaWZmZXJlbnQgaXRlbXMgb24gdGhhdCBsaXN0IG1vc3QgbGlrZWx5IGRpZmZlciBpbiBsZW5ndGgsIGNoYXJhY3RlcmlzdGljLCBhbmQgdHlwZSBvZiBhY3Rpdml0eSB0aGF0IGhhcyB0byBiZSBkb25lLiBZb3UgY2FuIHRoaW5rIG9mIGEgbGlzdCBhcyBhIHN1cGVyIGRhdGEgdHlwZSBiZWNhdXNlIHlvdSBjYW4gc3RvcmUgcHJhY3RpY2FsbHkgYW55IHBpZWNlIG9mIGluZm9ybWF0aW9uIGluIGl0DQoNCiMjIGBsaXN0KClgIGluIGFjdGlvbg0KYGBge3IgZXhhbXBsZX0NCiMgY3JlYXRlIGEgdmVjdG9yIHdpdGggbnVtZXJpY3MgMSB0aHJvdWdoIDEwDQpteV92ZWN0b3IgPC0gMToxMA0KbXlfdmVjdG9yDQoNCiMgY3JlYXRlIGEgbWF0cml4IHdpdGggbnVtZXJpY3MgMSB0aHJvdWdoIDkNCm15X21hdHJpeCA8LSBtYXRyaXgoMTo5LCBuY29sID0gMykNCm15X21hdHJpeA0KDQojIGNyZWF0ZSBhIGRmIHdpdGggdGhlIGZpcnN0IDEwIGVsZW1lbnRzIG9mIHRoZSAnbXRjYXJzJw0KbXlfZGYgPC0gbXRjYXJzWzE6MTAsXQ0KbXlfZGYNCg0KIyBjb25zdHJ1Y3QgYSBsaXN0IHRoYXQgY29udGFpbnMgdGhlIHZhcmlhYmxlcyAobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKQ0KbXlfbGlzdCA8LSBsaXN0KG15X3ZlY3RvciwgbXlfbWF0cml4LCBteV9kZikNCm15X2xpc3QNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkJhc2UgUjogTGlzdHMiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjIyBMZXQncyByZWNhcDoNCg0KKiAqKlZlY3RvcnMqKiAob25lIGRpbWVuc2lvbmFsIGFycmF5KTogY2FuIGhvbGQgbnVtZXJpYywgY2hhcmFjdGVyIG9yIGxvZ2ljYWwgdmFsdWVzLiBUaGUgZWxlbWVudHMgaW4gYSB2ZWN0b3IgYWxsIGhhdmUgdGhlIHNhbWUgZGF0YSB0eXBlLg0KKiAqKk1hdHJpY2VzKiogKHR3byBkaW1lbnNpb25hbCBhcnJheSk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gVGhlIGVsZW1lbnRzIGluIGEgbWF0cml4IGFsbCBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZS4NCiogKipEYXRhIGZyYW1lcyoqICh0d28tZGltZW5zaW9uYWwgb2JqZWN0cyk6IGNhbiBob2xkIG51bWVyaWMsIGNoYXJhY3RlciBvciBsb2dpY2FsIHZhbHVlcy4gV2l0aGluIGEgY29sdW1uIGFsbCBlbGVtZW50cyBoYXZlIHRoZSBzYW1lIGRhdGEgdHlwZSwgYnV0IGRpZmZlcmVudCBjb2x1bW5zIGNhbiBiZSBvZiBkaWZmZXJlbnQgZGF0YSB0eXBlLg0KDQojIFdoYXQgYXJlIGxpc3RzIGluIFI/DQpBIGxpc3QgaW4gUiBhbGxvd3MgeW91IHRvIGdhdGhlciBhIHZhcmlldHkgb2Ygb2JqZWN0cyB1bmRlciBvbmUgbmFtZSAodGhhdCBpcywgdGhlIG5hbWUgb2YgdGhlIGxpc3QpIGluIGFuIG9yZGVyZWQgd2F5LiBUaGVzZSBvYmplY3RzIGNhbiBiZSBtYXRyaWNlcywgdmVjdG9ycywgZGF0YSBmcmFtZXMsIGV2ZW4gb3RoZXIgbGlzdHMsIGV0Yy4gSXQgaXMgbm90IGV2ZW4gcmVxdWlyZWQgdGhhdCB0aGVzZSBvYmplY3RzIGFyZSByZWxhdGVkIHRvIGVhY2ggb3RoZXIgaW4gYW55IHdheS4NCg0KQSBsaXN0IGluIFIgaXMgc2ltaWxhciB0byB5b3VyIHRvLWRvIGxpc3QgYXQgd29yayBvciBzY2hvb2w6IHRoZSBkaWZmZXJlbnQgaXRlbXMgb24gdGhhdCBsaXN0IG1vc3QgbGlrZWx5IGRpZmZlciBpbiBsZW5ndGgsIGNoYXJhY3RlcmlzdGljLCBhbmQgdHlwZSBvZiBhY3Rpdml0eSB0aGF0IGhhcyB0byBiZSBkb25lLiBZb3UgY2FuIHRoaW5rIG9mIGEgbGlzdCBhcyBhIHN1cGVyIGRhdGEgdHlwZSBiZWNhdXNlIHlvdSBjYW4gc3RvcmUgcHJhY3RpY2FsbHkgYW55IHBpZWNlIG9mIGluZm9ybWF0aW9uIGluIGl0DQoNCiMjIGBsaXN0KClgIGluIGFjdGlvbg0KIyMjIGNyZWF0ZSBjb21wb25lbnRzIHRoYXQgd2lsbCBiZWNvbWUgcGFydCBvZiB0aGUgbGlzdA0KYGBge3IgY3JlYXRlLWNvbXBvbmVudHN9DQojIGNyZWF0ZSBhIHZlY3RvciB3aXRoIG51bWVyaWNzIDEgdGhyb3VnaCAxMA0KbXlfdmVjdG9yIDwtIDE6MTANCm15X3ZlY3Rvcg0KDQojIGNyZWF0ZSBhIG1hdHJpeCB3aXRoIG51bWVyaWNzIDEgdGhyb3VnaCA5DQpteV9tYXRyaXggPC0gbWF0cml4KDE6OSwgbmNvbCA9IDMpDQpteV9tYXRyaXgNCg0KIyBjcmVhdGUgYSBkZiB3aXRoIHRoZSBmaXJzdCAxMCBlbGVtZW50cyBvZiB0aGUgJ210Y2FycycNCm15X2RmIDwtIG10Y2Fyc1sxOjEwLF0NCm15X2RmDQpgYGANCg0KIyMjIENyZWF0ZSB0aGUgbGlzdA0KYGBge3IgY3JlYXRlLWxpc3R9DQojIGNvbnN0cnVjdCBhIGxpc3QgdGhhdCBjb250YWlucyB0aGUgdmFyaWFibGVzIChteV92ZWN0b3IsIG15X21hdHJpeCwgbXlfZGYpDQpteV9saXN0IDwtIGxpc3QobXlfdmVjdG9yLCBteV9tYXRyaXgsIG15X2RmKQ0KbXlfbGlzdA0KYGBgDQoNCiMjIFNlbGVjdCBjb21wb25lbnRzIG9mIGEgbGlzdCAtIGBsaXN0TmFtZVtbXV1gDQpgYGB7ciBzZWxlY3QtY29tcG9uZW50c30NCiMgcHJpbnQgb3V0IHRoZSB2ZWN0b3INCm15X2xpc3RbWzFdXQ0KDQojIHByaW50IG91dCB0aGUgJzcnIGZyb20gdGhlIG1hdHJpeA0KbXlfbGlzdFtbMl1dWzEsIDNdDQoNCiMgcHJpbnQgb3V0IHRoZSBocCBvZiB0aGUgRGF0c3VuIDcxMA0KbXlfbGlzdFtbM11dWzMsIDRdDQpgYGANCg0KDQoNCiMjIE5hbWUgdGhlIGNvbXBvbmVudCBpdGVtcyBpbiB5b3VyIGxpc3QNClJlbWVtYmVyaW5nIG51bWJlcnMgaXMgZGlmZmljdWx0LiBSZW1lbWJlcmluZyB3aGljaCBudW1iZXIgYXBwbGllcyB0byB3aGljaCBjb21wb25lbnQgaXMgZXNwZWNpYWxseSBkaWZmaWN1bHQuIEl0J3MgZWFzaWVyIHRvIHJlbWVtYmVyIGNvbXBvbmVudHMgYnkgYSBuYW1lIHdlIGFzc2lnbiB0byB0aGVtLg0KDQpgYGB7ciBuYW1lLWNvbXBvbmVudHN9DQojIEFkYXB0IGxpc3QoKSBjYWxsIHRvIGdpdmUgdGhlIGNvbXBvbmVudHMgbmFtZXMNCm15X2xpc3QgPC0gbGlzdCh2ZWMgPSBteV92ZWN0b3IsIG1hdCA9IG15X21hdHJpeCwgZGYgPSBteV9kZikNCg0KbXlfbGlzdA0KYGBgDQoNCiMjIFNlbGVjdCBlbGVtZW50cyBmcm9tIG5hbWVkIGNvbXBvbmVudHMgaW4gYSBsaXN0DQpgYGB7ciBzZWxlY3QtaXRlbXN9DQojIG91ciBsaXN0DQpteV9saXN0IDwtIGxpc3QodmVjID0gbXlfdmVjdG9yLCBtYXQgPSBteV9tYXRyaXgsIGRmID0gbXlfZGYpDQoNCiMgcHJpbnQgdGhlIHZlY3Rvcg0KbXlfbGlzdFtbInZlYyJdXQ0KDQojIHByaW50IHRoZSAnNycgZnJvbSB0aGUgbWF0cml4DQpteV9saXN0W1sibWF0Il1dWzEsIDNdDQoNCiMgcHJpbnQgdGhlIGhwIGZvciB0aGUgRGF0c3VuIDcxMA0KbXlfbGlzdFtbImRmIl1dWzMsIDRdDQpgYGANCg0KYGBge3J9DQojIHJlcGVhdCB0aGUgc3RlcHMgYWJvdmUgdXNpbmcgJCBtZXRob2QNCg0KIyBwcmludCB0aGUgdmVjdG9yDQpteV9saXN0JHZlYw0KDQojIHByaW50IHRoZSAnNycgZnJvbSB0aGUgbWF0cml4DQpteV9saXN0JG1hdFsxLCAzXQ0KDQojIHByaW50IHRoZSBocCBmb3IgdGhlIERhdHN1biA3MTANCm15X2xpc3QkZGZbMywgNF0NCmBgYA0KDQo=</div>
 
 
 
