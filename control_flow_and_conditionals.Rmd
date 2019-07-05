@@ -89,8 +89,8 @@ views <= 15
 * OR operator `|` - returns TRUE if either logical value is true
 * NOT operator `!`
 
+### AND operator
 ```{r}
-# AND
 TRUE & TRUE
 
 TRUE & FALSE
@@ -114,9 +114,8 @@ x > 5 & x < 9
 ```
 
 
-
+### OR operator
 ```{r}
-# OR
 TRUE | TRUE
 
 TRUE | FALSE
@@ -124,5 +123,17 @@ TRUE | FALSE
 FALSE | TRUE
 
 FALSE | FALSE
+```
+
+### OR operator on numerical expressions
+```{r}
+# set variable 'y' for example
+y <- 5
+
+# if either expression is true, it evaluates to TRUE
+y < 6 | y > 10
+
+# if neither expression is true, it evaluates to FALSE
+y < 3 | y > 10
 ```
 
