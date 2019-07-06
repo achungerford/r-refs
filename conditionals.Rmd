@@ -1,0 +1,43 @@
+---
+title: "Conditionals"
+output: html_notebook
+---
+
+# If and Else statements
+
+## If statement
+Assign a value to a variable, then write an if-test. If the condition is true, do what's in the braces.
+```{r}
+# if-statement: condition true
+x <- -3
+
+if (x < 0){
+    print("x is negative")
+}
+
+# if-statement: condition false
+if (x > 0){
+    print("x is positive")
+}
+```
+
+## Else statement
+
+`else` statement does not need an explicit conditional, but it must be used with an `if-statement`.
+```{r}
+x <- -3
+
+if(x > 0){
+    print("x is positive or zero")
+} else {
+    print("x is negative")
+}
+```
+
+## Else-if statement
+
+The `else-if` statement comes in between the `if` and the `else` statement.
+```{r}
+
+```
+
