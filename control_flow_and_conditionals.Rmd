@@ -190,7 +190,9 @@ c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
 c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 
 c(FALSE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+```
 
+```{r}
 # OR operators - |, ||
 # single
 c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)

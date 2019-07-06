@@ -1930,9 +1930,8 @@ fb     FALSE FALSE TRUE TRUE FALSE FALSE FALSE</code></pre>
 <h3>AND operator</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBTkRcblRSVUUgJiBUUlVFXG5gYGAifQ== -->
-<pre class="r"><code># AND
-TRUE &amp; TRUE</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVFJVRSAmIFRSVUVcbmBgYCJ9 -->
+<pre class="r"><code>TRUE &amp; TRUE</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
 <pre><code>[1] TRUE</code></pre>
@@ -1986,9 +1985,8 @@ x &gt; 5 &amp; x &lt; 9</code></pre>
 <h3>OR operator</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBPUlxuVFJVRSB8IFRSVUVcbmBgYCJ9 -->
-<pre class="r"><code># OR
-TRUE | TRUE</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVFJVRSB8IFRSVUVcbmBgYCJ9 -->
+<pre class="r"><code>TRUE | TRUE</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
 <pre><code>[1] TRUE</code></pre>
@@ -2072,10 +2070,118 @@ y &lt; 3 | y &gt; 10</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>The NOT operator can be really handy when used with other R functions such as <code>is.numeric()</code> which checks to see if an R objec is numeric.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXMubnVtZXJpYyg1KVxuYGBgIn0= -->
+<pre class="r"><code>is.numeric(5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIWlzLm51bWVyaWMoNSlcbmBgYCJ9 -->
+<pre class="r"><code>!is.numeric(5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXMubnVtZXJpYyhcImhlbGxvXCIpXG5gYGAifQ== -->
+<pre class="r"><code>is.numeric(&quot;hello&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIWlzLm51bWVyaWMoXCJoZWxsb1wiKVxuYGBgIn0= -->
+<pre class="r"><code>!is.numeric(&quot;hello&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="logical-operators-with-vectors-matrices" class="section level2">
+<h2>Logical Operators with Vectors &amp; Matrices</h2>
+<p>Just like relational operators, logical operators perform the operations in an <strong>element-wise</strong> manner.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBBTkRcbmMoVFJVRSwgVFJVRSwgRkFMU0UpICYgYyhUUlVFLCBGQUxTRSwgRkFMU0UpXG5gYGAifQ== -->
+<pre class="r"><code># AND
+c(TRUE, TRUE, FALSE) &amp; c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFIEZBTFNFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBPUlxuYyhUUlVFLCBUUlVFLCBGQUxTRSkgfCBjKFRSVUUsIEZBTFNFLCBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code># OR
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFICBUUlVFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOT1RcbiFjKFRSVUUsIFRSVUUsIEZBTFNFKVxuYGBgIn0= -->
+<pre class="r"><code># NOT
+!c(TRUE, TRUE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFIEZBTFNFICBUUlVFXG4ifQ== -->
+<pre><code>[1] FALSE FALSE  TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="logical-operators---single-or-double-v-v" class="section level2">
+<h2>Logical Operators - single or double <code>&amp;</code> v <code>&amp;&amp;</code>, <code>|</code> v <code>||</code></h2>
+<p>The results of your test will be different depending on if you use a single or double logical operator. The biggest difference is when you use them on vectors. The double ampersand operation only examines the first element of each vector</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzaW5nbGUgbG9naWNhbCBvcGVyYXRvcnMgdi4gZG91YmxlIGxvZ2ljYWwgb3BlcmF0b3JzXG5cbiMgQU5EIG9wZXJhdG9ycyAtICYsICYmXG4jIHNpbmdsZVxuYyhUUlVFLCBUUlVFLCBGQUxTRSkgJiBjKFRSVUUsIEZBTFNFLCBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code># single logical operators v. double logical operators
+
+# AND operators - &amp;, &amp;&amp;
+# single
+c(TRUE, TRUE, FALSE) &amp; c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFIEZBTFNFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE FALSE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBkb3VibGUgLSBvbmx5IGV4YW1pbmVzIHRoZSBmaXJzdCBlbGVtZW50IGluIGVhY2ggdmVjdG9yXG5jKFRSVUUsIFRSVUUsIEZBTFNFKSAmJiBjKFRSVUUsIEZBTFNFLCBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code># double - only examines the first element in each vector
+c(TRUE, TRUE, FALSE) &amp;&amp; c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYyhGQUxTRSwgVFJVRSwgRkFMU0UpICYmIGMoVFJVRSwgRkFMU0UsIEZBTFNFKVxuYGBgIn0= -->
+<pre class="r"><code>c(FALSE, TRUE, FALSE) &amp;&amp; c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIEZBTFNFXG4ifQ== -->
+<pre><code>[1] FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBPUiBvcGVyYXRvcnMgLSB8LCB8fFxuIyBzaW5nbGVcbmMoVFJVRSwgVFJVRSwgRkFMU0UpIHwgYyhUUlVFLCBGQUxTRSwgRkFMU0UpXG5gYGAifQ== -->
+<pre class="r"><code># OR operators - |, ||
+# single
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICBUUlVFICBUUlVFIEZBTFNFXG4ifQ== -->
+<pre><code>[1]  TRUE  TRUE FALSE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBkb3VibGVcbmMoRkFMU0UsIFRSVUUsIEZBTFNFKSB8fCBjKFRSVUUsIEZBTFNFLCBGQUxTRSlcbmBgYCJ9 -->
+<pre class="r"><code># double
+c(FALSE, TRUE, FALSE) || c(TRUE, FALSE, FALSE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvbnRyb2wgRmxvdyAmIENvbmRpdGlvbmFscyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFJlbGF0aW9uYWwgT3BlcmF0b3JzDQpSZWxhdGlvbmFsIG9wZXJhdG9ycyBhcmUgZm9yIGNvbXBhcmlzb25zLiBUaGV5IGxldCB1cyBzZWUgaG93IG9uZSBSIG9iamVjdCByZWxhdGVzIHRvIGFub3RoZXIuDQoNCiogVFJVRTogMQ0KKiBGQUxTRTogMA0KKiBFcXVhbGl0eSBgPT1gDQoqIEluZXF1YWxpdHkgYCE9YA0KKiBHcmVhdGVyIHRoYW4gYD5gDQoqIExlc3MgdGhhbiBgPGANCiogR3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIGA+PWANCiogTGVzcyB0aGFuIG9yIGVxdWFsIHRvIGA8PWANCg0KDQpgYGB7ciBlcXVhbGl0eX0NCiMgY29tcGFyZSBzdHJpbmdzDQoiY29tcGFyZSIgPT0gInN0cmluZ3MiDQoNCiMgY29tcGFyZSBudW1iZXJzDQo1ID09IDEwDQoNCiMgY2hlY2sgaWYgaGVsbG8gaXMgbm90IGdvb2RieWUNCiJoZWxsbyIgIT0gImdvb2RieWUiDQoNCmBgYA0KDQojIyBHcmVhdGVyIG9yIExlc3MgdGhhbiAtIGFscGhhYmV0aWNhbA0KRm9yIGNoYXJhY3RlciBzdHJpbmdzLCB0aGUgZ3JlYXRlci10aGFuIGxlc3MtdGhhbiBvcGVyYXRvcnMgY2hlY2sgdGhlIGZpcnN0IGxldHRlciBvZiB0aGUgc3RyaW5nLiBGb3Igc3RyaW5nIGNvbXBhcmlzb24sIFIgZGV0ZXJtaW5lcyB0aGUgZ3JlYXRlciB0aGFuIHJlbGF0aW9uc2hpcCBiYXNlZCBvbiBhbHBoYWJldGljYWwgb3JkZXIuIA0KYGBge3J9DQojIHNpbmNlICdIJyBjb21lcyBhZnRlciAnRycgaW4gdGhlIGFscGhhYmV0LCAiSGVsbG8iIGlzIGdyZWF0ZXIgdGhhbiAiR29vZGJ5ZSINCiJIZWxsbyIgPiAiR29vZGJ5ZSINCg0KIyBjb21wYXJlIHNpbWlsYXIgcGhyYXNlcw0KInJhaW5pbmciIDw9ICJyYWluaW5nIGRvZ3MiDQoNCiMgY29tcGFyZSBjYXBpdGFsaXphdGlvbg0KInVzZVIiID4gInVzZXIiDQpgYGANCg0KIyMgUmVsYXRpb25hbCBPcGVyYXRvcnMgd2l0aCBWZWN0b3JzDQpTYXkgeW91IHdhbnQgdG8gY29tcGFyZSB5b3VyIHByb2ZpbGUgdmlld3MgLSBnaXRodWIgdiBmYWNlYm9vaw0KYGBge3J9DQojIGNyZWF0ZSB0d28gcHJvZmlsZSB2aWV3cyB2ZWN0b3JzIGZvciB0aGUgZXhhbXBsZQ0KZ2l0aHViIDwtIGMoNSwgMjUsIDEwLCAxNSwgMCwgMzAsIDIwKQ0KZmIgPC0gYyg1MCwgMjUwLCAxMCwgNywgMzUsIDEwMCwgMjUpDQoNCiMgY2hlY2sgd2hpY2ggZGF5cyB0aGUgZ2l0aHViIHZpZXdzIGV4Y2VlZGVkIDEwDQpnaXRodWIgPiAxMA0KDQojIGNoZWNrIHdoZW4gbnVtYmVyIG9mIGdpdGh1YiB2aWV3cyBhcmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIGZiIHZpZXdzDQpnaXRodWIgPD0gZmINCmBgYA0KDQojIyBSZWxhdGlvbmFsIE9wZXJhdG9ycyB3aXRoIE1hdHJpY2VzDQpSJ3MgYWJpbGl0eSB0byBkZWFsIHdpdGggZGlmZmVyZW50IGRhdGEgc3RydWN0dXJlcyBmb3IgY29tcGFyaXNvbnMgZG9lcyBub3Qgc3RvcCBhdCB2ZWN0b3JzLiBNYXRyaWNlcyBhbmQgcmVsYXRpb25hbCBvcGVyYXRvcnMgYWxzbyB3b3JrIHRvZ2V0aGVyIHNlYW1sZXNzbHkuDQpgYGB7cn0NCiMgY3JlYXRlIGEgMng3IG1hdHJpeCB1c2luZyB0aGUgZ2l0aHViIGFuZCBmYiB2ZWN0b3JzDQp2aWV3cyA8LSBtYXRyaXgoYyhnaXRodWIsIGZiKSwgbnJvdyA9IDIsIGJ5cm93ID0gVFJVRSkNCnZpZXdzDQoNCiMgY3JlYXRlIHJvdyBhbmQgY29sdW1uIG5hbWUgdmVjdG9ycw0KcHJvZmlsZXMgPC0gYygiZ2l0aHViIiwgImZiIikNCmRheXMgPC0gYygiTSIsICJUIiwgIlciLCAiUiIsICJGIiwgIlNhdCIsICJTdW4iKQ0KDQojIGFkZCBuYW1lcyB0byBtYXRyaXgNCnJvd25hbWVzKHZpZXdzKSA8LSBwcm9maWxlcw0KY29sbmFtZXModmlld3MpIDwtIGRheXMNCg0KIyBzaG93IG5ldyBtYXRyaXgNCnZpZXdzDQpgYGANCg0KQ29tcGFyaXNvbnMgaW4gYSBtYXRyaXgNCmBgYHtyfQ0KIyB3aGVuIGRvZXMgdmlld3MgPSAxMz8NCnZpZXdzID09IDEzDQoNCiMgd2hlbiBhcmUgdmlld3MgPD0gMTU/DQp2aWV3cyA8PSAxNQ0KYGBgDQoNCiMjIExvZ2ljYWwgT3BlcmF0b3JzDQoNCiogQU5EIG9wZXJhdG9yIGAmYCAtIHJldHVybnMgVFJVRSBvbmx5IGlmIGJvdGggbG9naWNhbCB2YWx1ZXMgYXJlIHRydWUNCiogT1Igb3BlcmF0b3IgYHxgIC0gcmV0dXJucyBUUlVFIGlmIGVpdGhlciBsb2dpY2FsIHZhbHVlIGlzIHRydWUNCiogTk9UIG9wZXJhdG9yIGAhYA0KDQojIyMgQU5EIG9wZXJhdG9yDQpgYGB7cn0NClRSVUUgJiBUUlVFDQoNClRSVUUgJiBGQUxTRQ0KDQpGQUxTRSAmIFRSVUUNCg0KRkFMU0UgJiBGQUxTRQ0KYGBgDQoNCiMjIyBBTkQgb3BlcmF0b3Igb24gbnVtZXJpY2FsIGV4cHJlc3Npb25zDQpgYGB7cn0NCiMgc2V0IHZhcmlhYmxlIHggZm9yIGV4YW1wbGUNCnggPC0gMTANCg0KIyBpZiBib3RoIGxvZ2ljYWxzIGFyZSB0cnVlLCB0aGlzIGV2YWx1YXRlcyB0byBUUlVFDQp4ID4gNSAmIHggPCAxNQ0KDQojIGlmIGVpdGhlciBlcHhyZXNzaW9uIGlzIGZhbHNlLCB0aGlzIGV2YWx1YXRlcyB0byBGQUxTRQ0KeCA+IDUgJiB4IDwgOQ0KDQpgYGANCg0KDQojIyMgT1Igb3BlcmF0b3INCmBgYHtyfQ0KVFJVRSB8IFRSVUUNCg0KVFJVRSB8IEZBTFNFDQoNCkZBTFNFIHwgVFJVRQ0KDQpGQUxTRSB8IEZBTFNFDQpgYGANCg0KIyMjIE9SIG9wZXJhdG9yIG9uIG51bWVyaWNhbCBleHByZXNzaW9ucw0KYGBge3J9DQojIHNldCB2YXJpYWJsZSAneScgZm9yIGV4YW1wbGUNCnkgPC0gNQ0KDQojIGlmIGVpdGhlciBleHByZXNzaW9uIGlzIHRydWUsIGl0IGV2YWx1YXRlcyB0byBUUlVFDQp5IDwgNiB8IHkgPiAxMA0KDQojIGlmIG5laXRoZXIgZXhwcmVzc2lvbiBpcyB0cnVlLCBpdCBldmFsdWF0ZXMgdG8gRkFMU0UNCnkgPCAzIHwgeSA+IDEwDQpgYGANCg0KIyMgTk9UIG9wZXJhdG9yDQpgYGB7cn0NCiMgaWYgc29tZXRoaW5nIGlzIE5PVCB0cnVlLCBpdCBldmFsdWF0ZXMgdG8gRkFMU0UNCiFUUlVFDQoNCiMgaWYgc29tZXRoaW5nIGlzIE5PVCBmYWxzZSwgaXQgZXZhbHVhdGVzIHRvIFRSVUUNCiFGQUxTRQ0KDQojIHRoZXJlIGFyZSBtdWx0aXBsZSB3YXlzIHRvIGV2YWx1YXRlIHRoZSBzYW1lIGV4cHJlc3Npb25zDQohKHggPCA1KQ0KeCA+PSA1DQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvbnRyb2wgRmxvdyAmIENvbmRpdGlvbmFscyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMjIFJlbGF0aW9uYWwgT3BlcmF0b3JzDQpSZWxhdGlvbmFsIG9wZXJhdG9ycyBhcmUgZm9yIGNvbXBhcmlzb25zLiBUaGV5IGxldCB1cyBzZWUgaG93IG9uZSBSIG9iamVjdCByZWxhdGVzIHRvIGFub3RoZXIuDQoNCiogVFJVRTogMQ0KKiBGQUxTRTogMA0KKiBFcXVhbGl0eSBgPT1gDQoqIEluZXF1YWxpdHkgYCE9YA0KKiBHcmVhdGVyIHRoYW4gYD5gDQoqIExlc3MgdGhhbiBgPGANCiogR3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIGA+PWANCiogTGVzcyB0aGFuIG9yIGVxdWFsIHRvIGA8PWANCg0KDQpgYGB7ciBlcXVhbGl0eX0NCiMgY29tcGFyZSBzdHJpbmdzDQoiY29tcGFyZSIgPT0gInN0cmluZ3MiDQoNCiMgY29tcGFyZSBudW1iZXJzDQo1ID09IDEwDQoNCiMgY2hlY2sgaWYgaGVsbG8gaXMgbm90IGdvb2RieWUNCiJoZWxsbyIgIT0gImdvb2RieWUiDQoNCmBgYA0KDQojIyBHcmVhdGVyIG9yIExlc3MgdGhhbiAtIGFscGhhYmV0aWNhbA0KRm9yIGNoYXJhY3RlciBzdHJpbmdzLCB0aGUgZ3JlYXRlci10aGFuIGxlc3MtdGhhbiBvcGVyYXRvcnMgY2hlY2sgdGhlIGZpcnN0IGxldHRlciBvZiB0aGUgc3RyaW5nLiBGb3Igc3RyaW5nIGNvbXBhcmlzb24sIFIgZGV0ZXJtaW5lcyB0aGUgZ3JlYXRlciB0aGFuIHJlbGF0aW9uc2hpcCBiYXNlZCBvbiBhbHBoYWJldGljYWwgb3JkZXIuIA0KYGBge3J9DQojIHNpbmNlICdIJyBjb21lcyBhZnRlciAnRycgaW4gdGhlIGFscGhhYmV0LCAiSGVsbG8iIGlzIGdyZWF0ZXIgdGhhbiAiR29vZGJ5ZSINCiJIZWxsbyIgPiAiR29vZGJ5ZSINCg0KIyBjb21wYXJlIHNpbWlsYXIgcGhyYXNlcw0KInJhaW5pbmciIDw9ICJyYWluaW5nIGRvZ3MiDQoNCiMgY29tcGFyZSBjYXBpdGFsaXphdGlvbg0KInVzZVIiID4gInVzZXIiDQpgYGANCg0KIyMgUmVsYXRpb25hbCBPcGVyYXRvcnMgd2l0aCBWZWN0b3JzDQpTYXkgeW91IHdhbnQgdG8gY29tcGFyZSB5b3VyIHByb2ZpbGUgdmlld3MgLSBnaXRodWIgdiBmYWNlYm9vaw0KYGBge3J9DQojIGNyZWF0ZSB0d28gcHJvZmlsZSB2aWV3cyB2ZWN0b3JzIGZvciB0aGUgZXhhbXBsZQ0KZ2l0aHViIDwtIGMoNSwgMjUsIDEwLCAxNSwgMCwgMzAsIDIwKQ0KZmIgPC0gYyg1MCwgMjUwLCAxMCwgNywgMzUsIDEwMCwgMjUpDQoNCiMgY2hlY2sgd2hpY2ggZGF5cyB0aGUgZ2l0aHViIHZpZXdzIGV4Y2VlZGVkIDEwDQpnaXRodWIgPiAxMA0KDQojIGNoZWNrIHdoZW4gbnVtYmVyIG9mIGdpdGh1YiB2aWV3cyBhcmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIGZiIHZpZXdzDQpnaXRodWIgPD0gZmINCmBgYA0KDQojIyBSZWxhdGlvbmFsIE9wZXJhdG9ycyB3aXRoIE1hdHJpY2VzDQpSJ3MgYWJpbGl0eSB0byBkZWFsIHdpdGggZGlmZmVyZW50IGRhdGEgc3RydWN0dXJlcyBmb3IgY29tcGFyaXNvbnMgZG9lcyBub3Qgc3RvcCBhdCB2ZWN0b3JzLiBNYXRyaWNlcyBhbmQgcmVsYXRpb25hbCBvcGVyYXRvcnMgYWxzbyB3b3JrIHRvZ2V0aGVyIHNlYW1sZXNzbHkuDQpgYGB7cn0NCiMgY3JlYXRlIGEgMng3IG1hdHJpeCB1c2luZyB0aGUgZ2l0aHViIGFuZCBmYiB2ZWN0b3JzDQp2aWV3cyA8LSBtYXRyaXgoYyhnaXRodWIsIGZiKSwgbnJvdyA9IDIsIGJ5cm93ID0gVFJVRSkNCnZpZXdzDQoNCiMgY3JlYXRlIHJvdyBhbmQgY29sdW1uIG5hbWUgdmVjdG9ycw0KcHJvZmlsZXMgPC0gYygiZ2l0aHViIiwgImZiIikNCmRheXMgPC0gYygiTSIsICJUIiwgIlciLCAiUiIsICJGIiwgIlNhdCIsICJTdW4iKQ0KDQojIGFkZCBuYW1lcyB0byBtYXRyaXgNCnJvd25hbWVzKHZpZXdzKSA8LSBwcm9maWxlcw0KY29sbmFtZXModmlld3MpIDwtIGRheXMNCg0KIyBzaG93IG5ldyBtYXRyaXgNCnZpZXdzDQpgYGANCg0KQ29tcGFyaXNvbnMgaW4gYSBtYXRyaXgNCmBgYHtyfQ0KIyB3aGVuIGRvZXMgdmlld3MgPSAxMz8NCnZpZXdzID09IDEzDQoNCiMgd2hlbiBhcmUgdmlld3MgPD0gMTU/DQp2aWV3cyA8PSAxNQ0KYGBgDQoNCiMjIExvZ2ljYWwgT3BlcmF0b3JzDQoNCiogQU5EIG9wZXJhdG9yIGAmYCAtIHJldHVybnMgVFJVRSBvbmx5IGlmIGJvdGggbG9naWNhbCB2YWx1ZXMgYXJlIHRydWUNCiogT1Igb3BlcmF0b3IgYHxgIC0gcmV0dXJucyBUUlVFIGlmIGVpdGhlciBsb2dpY2FsIHZhbHVlIGlzIHRydWUNCiogTk9UIG9wZXJhdG9yIGAhYA0KDQojIyMgQU5EIG9wZXJhdG9yDQpgYGB7cn0NClRSVUUgJiBUUlVFDQoNClRSVUUgJiBGQUxTRQ0KDQpGQUxTRSAmIFRSVUUNCg0KRkFMU0UgJiBGQUxTRQ0KYGBgDQoNCiMjIyBBTkQgb3BlcmF0b3Igb24gbnVtZXJpY2FsIGV4cHJlc3Npb25zDQpgYGB7cn0NCiMgc2V0IHZhcmlhYmxlIHggZm9yIGV4YW1wbGUNCnggPC0gMTANCg0KIyBpZiBib3RoIGxvZ2ljYWxzIGFyZSB0cnVlLCB0aGlzIGV2YWx1YXRlcyB0byBUUlVFDQp4ID4gNSAmIHggPCAxNQ0KDQojIGlmIGVpdGhlciBlcHhyZXNzaW9uIGlzIGZhbHNlLCB0aGlzIGV2YWx1YXRlcyB0byBGQUxTRQ0KeCA+IDUgJiB4IDwgOQ0KDQpgYGANCg0KDQojIyMgT1Igb3BlcmF0b3INCmBgYHtyfQ0KVFJVRSB8IFRSVUUNCg0KVFJVRSB8IEZBTFNFDQoNCkZBTFNFIHwgVFJVRQ0KDQpGQUxTRSB8IEZBTFNFDQpgYGANCg0KIyMjIE9SIG9wZXJhdG9yIG9uIG51bWVyaWNhbCBleHByZXNzaW9ucw0KYGBge3J9DQojIHNldCB2YXJpYWJsZSAneScgZm9yIGV4YW1wbGUNCnkgPC0gNQ0KDQojIGlmIGVpdGhlciBleHByZXNzaW9uIGlzIHRydWUsIGl0IGV2YWx1YXRlcyB0byBUUlVFDQp5IDwgNiB8IHkgPiAxMA0KDQojIGlmIG5laXRoZXIgZXhwcmVzc2lvbiBpcyB0cnVlLCBpdCBldmFsdWF0ZXMgdG8gRkFMU0UNCnkgPCAzIHwgeSA+IDEwDQpgYGANCg0KIyMgTk9UIG9wZXJhdG9yDQpgYGB7cn0NCiMgaWYgc29tZXRoaW5nIGlzIE5PVCB0cnVlLCBpdCBldmFsdWF0ZXMgdG8gRkFMU0UNCiFUUlVFDQoNCiMgaWYgc29tZXRoaW5nIGlzIE5PVCBmYWxzZSwgaXQgZXZhbHVhdGVzIHRvIFRSVUUNCiFGQUxTRQ0KDQojIHRoZXJlIGFyZSBtdWx0aXBsZSB3YXlzIHRvIGV2YWx1YXRlIHRoZSBzYW1lIGV4cHJlc3Npb25zDQohKHggPCA1KQ0KeCA+PSA1DQpgYGANCg0KVGhlIE5PVCBvcGVyYXRvciBjYW4gYmUgcmVhbGx5IGhhbmR5IHdoZW4gdXNlZCB3aXRoIG90aGVyIFIgZnVuY3Rpb25zIHN1Y2ggYXMgYGlzLm51bWVyaWMoKWAgd2hpY2ggY2hlY2tzIHRvIHNlZSBpZiBhbiBSIG9iamVjIGlzIG51bWVyaWMuDQpgYGB7cn0NCmlzLm51bWVyaWMoNSkNCg0KIWlzLm51bWVyaWMoNSkNCg0KaXMubnVtZXJpYygiaGVsbG8iKQ0KDQohaXMubnVtZXJpYygiaGVsbG8iKQ0KYGBgDQoNCiMjIExvZ2ljYWwgT3BlcmF0b3JzIHdpdGggVmVjdG9ycyAmIE1hdHJpY2VzDQoNCkp1c3QgbGlrZSByZWxhdGlvbmFsIG9wZXJhdG9ycywgbG9naWNhbCBvcGVyYXRvcnMgcGVyZm9ybSB0aGUgb3BlcmF0aW9ucyBpbiBhbiAqKmVsZW1lbnQtd2lzZSoqIG1hbm5lci4NCmBgYHtyfQ0KIyBBTkQNCmMoVFJVRSwgVFJVRSwgRkFMU0UpICYgYyhUUlVFLCBGQUxTRSwgRkFMU0UpDQoNCiMgT1INCmMoVFJVRSwgVFJVRSwgRkFMU0UpIHwgYyhUUlVFLCBGQUxTRSwgRkFMU0UpDQoNCiMgTk9UDQohYyhUUlVFLCBUUlVFLCBGQUxTRSkNCmBgYA0KDQojIyBMb2dpY2FsIE9wZXJhdG9ycyAtIHNpbmdsZSBvciBkb3VibGUgYCZgIHYgYCYmYCwgYHxgIHYgYHx8YA0KDQpUaGUgcmVzdWx0cyBvZiB5b3VyIHRlc3Qgd2lsbCBiZSBkaWZmZXJlbnQgZGVwZW5kaW5nIG9uIGlmIHlvdSB1c2UgYSBzaW5nbGUgb3IgZG91YmxlIGxvZ2ljYWwgb3BlcmF0b3IuIFRoZSBiaWdnZXN0IGRpZmZlcmVuY2UgaXMgd2hlbiB5b3UgdXNlIHRoZW0gb24gdmVjdG9ycy4gVGhlIGRvdWJsZSBhbXBlcnNhbmQgb3BlcmF0aW9uIG9ubHkgZXhhbWluZXMgdGhlIGZpcnN0IGVsZW1lbnQgb2YgZWFjaCB2ZWN0b3INCg0KYGBge3J9DQojIHNpbmdsZSBsb2dpY2FsIG9wZXJhdG9ycyB2LiBkb3VibGUgbG9naWNhbCBvcGVyYXRvcnMNCg0KIyBBTkQgb3BlcmF0b3JzIC0gJiwgJiYNCiMgc2luZ2xlDQpjKFRSVUUsIFRSVUUsIEZBTFNFKSAmIGMoVFJVRSwgRkFMU0UsIEZBTFNFKQ0KDQojIGRvdWJsZSAtIG9ubHkgZXhhbWluZXMgdGhlIGZpcnN0IGVsZW1lbnQgaW4gZWFjaCB2ZWN0b3INCmMoVFJVRSwgVFJVRSwgRkFMU0UpICYmIGMoVFJVRSwgRkFMU0UsIEZBTFNFKQ0KDQpjKEZBTFNFLCBUUlVFLCBGQUxTRSkgJiYgYyhUUlVFLCBGQUxTRSwgRkFMU0UpDQpgYGANCg0KYGBge3J9DQojIE9SIG9wZXJhdG9ycyAtIHwsIHx8DQojIHNpbmdsZQ0KYyhUUlVFLCBUUlVFLCBGQUxTRSkgfCBjKFRSVUUsIEZBTFNFLCBGQUxTRSkNCg0KIyBkb3VibGUNCmMoRkFMU0UsIFRSVUUsIEZBTFNFKSB8fCBjKFRSVUUsIEZBTFNFLCBGQUxTRSkNCmBgYA0KDQoNCg==</div>
 
 
 
