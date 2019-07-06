@@ -1819,13 +1819,32 @@ if(x &gt; 0){
 <p>The <code>else-if</code> statement comes in between the <code>if</code> and the <code>else</code> statement.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzZXQgdGhlIGluaXRpYWwgdmFsdWVcbnggPC0gLTNcblxuaWYgKHggPCAwKXtcbiAgICBwcmludChcInggaXMgbmVnYXRpdmVcIilcbn0gZWxzZSBpZiAoeCA9PSAwKXtcbiAgICBwcmludChcInggaXMgemVyb1wiKVxufSBlbHNlIHtcbiAgICBwcmludChcInggaXMgcG9zaXRpdmVcIilcbn1cbmBgYCJ9 -->
+<pre class="r"><code># set the initial value
+x &lt;- -3
+
+if (x &lt; 0){
+    print(&quot;x is negative&quot;)
+} else if (x == 0){
+    print(&quot;x is zero&quot;)
+} else {
+    print(&quot;x is positive&quot;)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwieCBpcyBuZWdhdGl2ZVwiXG4ifQ== -->
+<pre><code>[1] &quot;x is negative&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="caution" class="section level2">
+<h2>Caution</h2>
+<p>If your conditions are not mutually exclusive you will run into problems. As soon as R encounters an expression that evaluates to TRUE.</p>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvbmRpdGlvbmFscyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgSWYgYW5kIEVsc2Ugc3RhdGVtZW50cw0KDQojIyBJZiBzdGF0ZW1lbnQNCkFzc2lnbiBhIHZhbHVlIHRvIGEgdmFyaWFibGUsIHRoZW4gd3JpdGUgYW4gaWYtdGVzdC4gSWYgdGhlIGNvbmRpdGlvbiBpcyB0cnVlLCBkbyB3aGF0J3MgaW4gdGhlIGJyYWNlcy4NCmBgYHtyfQ0KIyBpZi1zdGF0ZW1lbnQ6IGNvbmRpdGlvbiB0cnVlDQp4IDwtIC0zDQoNCmlmICh4IDwgMCl7DQogICAgcHJpbnQoInggaXMgbmVnYXRpdmUiKQ0KfQ0KDQojIGlmLXN0YXRlbWVudDogY29uZGl0aW9uIGZhbHNlDQppZiAoeCA+IDApew0KICAgIHByaW50KCJ4IGlzIHBvc2l0aXZlIikNCn0NCmBgYA0KDQojIyBFbHNlIHN0YXRlbWVudA0KDQpgZWxzZWAgc3RhdGVtZW50IGRvZXMgbm90IG5lZWQgYW4gZXhwbGljaXQgY29uZGl0aW9uYWwsIGJ1dCBpdCBtdXN0IGJlIHVzZWQgd2l0aCBhbiBgaWYtc3RhdGVtZW50YC4NCmBgYHtyfQ0KeCA8LSAtMw0KDQppZih4ID4gMCl7DQogICAgcHJpbnQoInggaXMgcG9zaXRpdmUgb3IgemVybyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJ4IGlzIG5lZ2F0aXZlIikNCn0NCmBgYA0KDQojIyBFbHNlLWlmIHN0YXRlbWVudA0KDQpUaGUgYGVsc2UtaWZgIHN0YXRlbWVudCBjb21lcyBpbiBiZXR3ZWVuIHRoZSBgaWZgIGFuZCB0aGUgYGVsc2VgIHN0YXRlbWVudC4NCmBgYHtyfQ0KDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvbmRpdGlvbmFscyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCiMgSWYgYW5kIEVsc2Ugc3RhdGVtZW50cw0KDQojIyBJZiBzdGF0ZW1lbnQNCkFzc2lnbiBhIHZhbHVlIHRvIGEgdmFyaWFibGUsIHRoZW4gd3JpdGUgYW4gaWYtdGVzdC4gSWYgdGhlIGNvbmRpdGlvbiBpcyB0cnVlLCBkbyB3aGF0J3MgaW4gdGhlIGJyYWNlcy4NCmBgYHtyfQ0KIyBpZi1zdGF0ZW1lbnQ6IGNvbmRpdGlvbiB0cnVlDQp4IDwtIC0zDQoNCmlmICh4IDwgMCl7DQogICAgcHJpbnQoInggaXMgbmVnYXRpdmUiKQ0KfQ0KDQojIGlmLXN0YXRlbWVudDogY29uZGl0aW9uIGZhbHNlDQppZiAoeCA+IDApew0KICAgIHByaW50KCJ4IGlzIHBvc2l0aXZlIikNCn0NCmBgYA0KDQojIyBFbHNlIHN0YXRlbWVudA0KDQpgZWxzZWAgc3RhdGVtZW50IGRvZXMgbm90IG5lZWQgYW4gZXhwbGljaXQgY29uZGl0aW9uYWwsIGJ1dCBpdCBtdXN0IGJlIHVzZWQgd2l0aCBhbiBgaWYtc3RhdGVtZW50YC4NCmBgYHtyfQ0KIyBzZXQgaW5pdGlhbCB2YWx1ZQ0KeCA8LSAtMw0KDQppZih4ID4gMCl7DQogICAgcHJpbnQoInggaXMgcG9zaXRpdmUgb3IgemVybyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJ4IGlzIG5lZ2F0aXZlIikNCn0NCmBgYA0KDQojIyBFbHNlLWlmIHN0YXRlbWVudA0KDQpUaGUgYGVsc2UtaWZgIHN0YXRlbWVudCBjb21lcyBpbiBiZXR3ZWVuIHRoZSBgaWZgIGFuZCB0aGUgYGVsc2VgIHN0YXRlbWVudC4NCmBgYHtyfQ0KIyBzZXQgdGhlIGluaXRpYWwgdmFsdWUNCnggPC0gLTMNCg0KaWYgKHggPCAwKXsNCiAgICBwcmludCgieCBpcyBuZWdhdGl2ZSIpDQp9IGVsc2UgaWYgKHggPT0gMCl7DQogICAgcHJpbnQoInggaXMgemVybyIpDQp9IGVsc2Ugew0KICAgIHByaW50KCJ4IGlzIHBvc2l0aXZlIikNCn0NCmBgYA0KDQojIyBDYXV0aW9uDQpJZiB5b3VyIGNvbmRpdGlvbnMgYXJlIG5vdCBtdXR1YWxseSBleGNsdXNpdmUgeW91IHdpbGwgcnVuIGludG8gcHJvYmxlbXMuIEFzIHNvb24gYXMgUiBlbmNvdW50ZXJzIGFuIGV4cHJlc3Npb24gdGhhdCBldmFsdWF0ZXMgdG8gVFJVRS4=</div>
 
 
 

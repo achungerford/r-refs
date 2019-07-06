@@ -25,6 +25,7 @@ if (x > 0){
 
 `else` statement does not need an explicit conditional, but it must be used with an `if-statement`.
 ```{r}
+# set initial value
 x <- -3
 
 if(x > 0){
@@ -38,6 +39,17 @@ if(x > 0){
 
 The `else-if` statement comes in between the `if` and the `else` statement.
 ```{r}
+# set the initial value
+x <- -3
 
+if (x < 0){
+    print("x is negative")
+} else if (x == 0){
+    print("x is zero")
+} else {
+    print("x is positive")
+}
 ```
 
+## Caution
+If your conditions are not mutually exclusive you will run into problems. As soon as R encounters an expression that evaluates to TRUE.
