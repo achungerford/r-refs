@@ -137,3 +137,66 @@ y < 6 | y > 10
 y < 3 | y > 10
 ```
 
+## NOT operator
+```{r}
+# if something is NOT true, it evaluates to FALSE
+!TRUE
+
+# if something is NOT false, it evaluates to TRUE
+!FALSE
+
+# there are multiple ways to evaluate the same expressions
+!(x < 5)
+x >= 5
+```
+
+The NOT operator can be really handy when used with other R functions such as `is.numeric()` which checks to see if an R objec is numeric.
+```{r}
+is.numeric(5)
+
+!is.numeric(5)
+
+is.numeric("hello")
+
+!is.numeric("hello")
+```
+
+## Logical Operators with Vectors & Matrices
+
+Just like relational operators, logical operators perform the operations in an **element-wise** manner.
+```{r}
+# AND
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
+
+# OR
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+
+# NOT
+!c(TRUE, TRUE, FALSE)
+```
+
+## Logical Operators - single or double `&` v `&&`, `|` v `||`
+
+The results of your test will be different depending on if you use a single or double logical operator. The biggest difference is when you use them on vectors. The double ampersand operation only examines the first element of each vector
+
+```{r}
+# single logical operators v. double logical operators
+
+# AND operators - &, &&
+# single
+c(TRUE, TRUE, FALSE) & c(TRUE, FALSE, FALSE)
+
+# double - only examines the first element in each vector
+c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+
+c(FALSE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
+
+# OR operators - |, ||
+# single
+c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
+
+# double
+c(FALSE, TRUE, FALSE) || c(TRUE, FALSE, FALSE)
+```
+
+
