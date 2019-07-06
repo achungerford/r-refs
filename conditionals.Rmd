@@ -52,4 +52,22 @@ if (x < 0){
 ```
 
 ## Caution
-If your conditions are not mutually exclusive you will run into problems. As soon as R encounters an expression that evaluates to TRUE.
+
+If your conditions are not mutually exclusive you will run into problems. As soon as R encounters an expression that evaluates to TRUE it will execute the code and ignore any code in the rest of the statement.
+
+```{r}
+# a problem occurs when our conditions are not mutually exclusive
+# example: divisible by 2 and 3
+
+x <- 6
+
+if (x %% 2 == 0){
+    print("x is divisible by 2")
+} else if (x %% 3 == 0){
+    print("x is divisible by 3")
+} else {
+    print("x is not divisble by 2 or 3")
+}
+```
+
+Notice x is actually divisible by both 2 and 3, but it never got to the 2nd conditional.
