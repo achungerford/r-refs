@@ -1,5 +1,5 @@
 ---
-title: "Working with Categorical Variables -- aka Factors"
+title: "Categorical Variables -- aka Factors"
 output: html_notebook
 ---
 

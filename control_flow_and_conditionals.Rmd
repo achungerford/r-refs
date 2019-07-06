@@ -179,7 +179,7 @@ c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
 
 The results of your test will be different depending on if you use a single or double logical operator. The biggest difference is when you use them on vectors. The double ampersand operation only examines the first element of each vector
 
-```{r}
+```{r single-double-AND}
 # single logical operators v. double logical operators
 
 # AND operators - &, &&
@@ -192,7 +192,7 @@ c(TRUE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 c(FALSE, TRUE, FALSE) && c(TRUE, FALSE, FALSE)
 ```
 
-```{r}
+```{r single-double-OR}
 # OR operators - |, ||
 # single
 c(TRUE, TRUE, FALSE) | c(TRUE, FALSE, FALSE)
