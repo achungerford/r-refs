@@ -37,7 +37,8 @@ if(x > 0){
 
 ## Else-if statement
 
-The `else-if` statement comes in between the `if` and the `else` statement.
+The `else-if` statement comes in between the `if` and the `else` statement. It's important that the `else if` keywords comes on the same line as the closing bracket of the previous part of the control construct!
+
 ```{r}
 # set the initial value
 x <- -3
