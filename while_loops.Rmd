@@ -36,3 +36,16 @@ while (ctr <= 7){
 }
 ```
 
+
+## For Loops
+
+"For each variable in a sequence, exectue the following code" is a simple way to explain a for loop. Allows you to do things on separate lines. For loops can work not only on vectors, but also on lists.
+
+```{r}
+cities <- c("San Francisco", "Santa Barbara", "Los Angeles", "San Diego")
+
+for (city in cities){
+    print(city)
+}
+```
+
