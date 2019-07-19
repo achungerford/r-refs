@@ -1,0 +1,38 @@
+---
+title: "While Loops"
+output: html_notebook
+---
+
+## While Loops
+
+These execute as long as the condition is true. You need to set the initial variable value outside the loop.
+
+```{r while loop}
+# first we're going to set the counter to 1
+ctr <- 1
+while(ctr <= 7){
+    print(paste("ctr is set to ", ctr))
+    ctr <- ctr + 1
+}
+```
+
+
+## Avoid infinite loops
+
+Make sure you have a counter line that increments or decrements the initial value. To break an inifinite loop use `ctrl-c`.
+
+## Break statements
+
+The break statement simply breaks out of the while loop as soon as it is encountered. Say we want to break out of the loop as soon as the value of `ctr` is divisible by 5. Once ctr reaches a value divisible by 5, the while loop is abandoned.
+
+```{r}
+ctr <- 1
+while (ctr <= 7){
+    if (ctr %% 5 == 0){
+        break
+    }
+    print(paste("ctr is set to ", ctr))
+    ctr <- ctr + 1
+}
+```
+
