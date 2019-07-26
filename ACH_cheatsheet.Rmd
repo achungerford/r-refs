@@ -1,0 +1,181 @@
+---
+title: "ACH's Base R cheatsheet"
+output: html_notebook
+---
+
+## Commands
+**open shortcuts pop-up** - `alt + shift + k` <br>
+**clear console** - `ctrl + L` <br>
+**move line** - `alt + up/down arrow` <br>
+**duplicate code** - `ctrl + shift + D` <br>
+**Go to file/function popup** - `ctrl + .` (period) <br>
+**navigate panes = ctrl + nums** - `ctrl + 1` & `ctrl + 2` <br>
+**navigate to terminal** - `alt + shift + T`
+**create a notebook** - File > New File > R Notebook <br>
+**pipe %>% operator** - `ctrl + shift + m` <br>
+
+```{r}
+# An 'R Notebook' is different from just 'R markdown...'.
+# 
+# File > New File > 'R Notebook'
+# is the one you want. It's similar to a Jupyter Notebook in python
+# At the top you will see:
+
+#---
+#title: "R Notebook"
+#output: html_notebook
+#---
+
+
+
+```
+
+
+## Packages
+**install libraries** (aka packages) `install.packages("packageName")`
+
+**load library** `library(packageName)`
+
+**detailed info about current session for reproducible results**
+`sessionInfo()`
+
+**list loaded packages** `(.packages())`
+
+**check for conflicts among packages** `conflicts(detail=TRUE)`
+
+**check for package dependencies**
+`tools::package_dependencies("packageName", db = installed.packages())`
+
+**check if package is a dependency for other packages**
+`tools::package_dependencies("packageName", db = installed.packages(), reverse = TRUE)`
+
+
+## Load Data
+
+#### Tidyverse - readr package
+
+You can load data by filename only if your data is in the same directory as your R Notebook/script.<br> Otherwise you will need either (file = relative path) or (file = absolute path).<br>
+**csv** `data <- read_csv(file = 'name.csv', colnames = TRUE/FALSE)`
+
+**.Rdata files** `load("fileName.Rdata")`
+
+## Look at Data
+**get structure of data** - `str(data)` <br>
+**view data in new tab** - `View()` <br>
+
+
+## Vectors (aka lists or arrays)
+
+#### Base R: vectors (lists/arrays)
+```{r lists}
+# create a vector
+earnings <- c(100, -150, 250, -50, 350)
+
+# assign column names
+names(earnings) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+# show new vector with col names
+earnings
+```
+
+#### Base R: combining vectors with math
+When you add vectors, each element gets added by element position. So 1st + 1st, 2nd + 2nd, 3rd + 3rd. This is a very different result from calling the sum function. Adding vectors is very different from getting the sum of vectors.
+```{r vector math}
+# adding vectors: each element gets added by position
+c(1, 2, 3) + c(4, 5, 6)
+
+x <- c(2, 4, 6)
+y <- c(3, 6, 9)
+
+# add vectors x and y
+x + y
+
+# subtract vectors x and y
+x - y
+
+# multiply vectors x and y
+x * y
+
+# divide vectors x and y
+x / y
+
+# find the average of vector x
+mean(x)
+
+# find the average of the sum
+mean(x+y)
+```
+
+#### Base R: - `sum()`
+With a single argument, this function adds up the elements within a vector. With multiple arguments, the `sum()` function adds up all the elements within each vector. This is different from adding two different vectors element-wise: 1st + 1st, 2nd + 2nd, etc. like we did in the examples above with `x` and `y`.
+```{r sum()}
+a <- c(5, 10, 15)
+sum(a)
+
+b <- c(30, 40, 50)
+sum(a, b)
+```
+
+#### Base R: select elements in a vector - by index
+In R, vectors are indexed at 1, unlike C or Python languages where arrays or lists are 0-indexed.
+```{r element by index}
+# create a vector of days of the week
+days <- c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+          "Friday", "Saturday")
+
+# select the first element
+days[1]
+
+# select elements 2 through 4
+days[2:4]
+
+# select only the 2nd and 6th days of the week
+days[c(2, 6)]
+```
+#### Base R: select elements in a vector - by name.
+```{r element by name}
+# output earnings vector with named elements
+earnings
+
+# select an element by it's col name
+earnings["Wednesday"]
+
+# select only Tuesday & Thursday earnings by name
+earnings[c("Tuesday", "Thursday")]
+
+# 'days' vector only containts M-F. What happens when we try to select all the
+# earnings based on the named vector?
+earnings[days]
+```
+
+#### Base R: Logical Operators - select elements in a vector - by comparison
+You can use comparison operators on entire vectors.
+`<`, `<=`, `>`, `>=`, `==`, `!=`, `x&y`, `x|y`, `!x` (Not x), `isTRUE(x)` test if X is TRUE.
+```{r element by comparison}
+# show vector 'a'
+a
+
+# compare which elements in vector 'a' less than 12
+a < 12
+
+# are any elements in vector 'a' not 10?
+a != 10
+
+# selecting elements in a vector based on comparison operators
+z <- c(10, 20, 30, 40, 50)
+z[z > 30]
+```
+
+
+## Tidyverse
+
+#### `summarize()`
+
+You can use summarize with the following functions:
+
+`mean()` <br>
+`sum()` <br>
+`median()` <br>
+`min()` <br>
+`max()` <br>
+
